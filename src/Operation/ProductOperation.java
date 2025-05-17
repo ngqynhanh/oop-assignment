@@ -1,5 +1,6 @@
 package Operation;
 
+import DBUtil.OrderDB;
 import DBUtil.ProductDB;
 import Model.Product;
 import Model.ProductListResult;
@@ -35,7 +36,9 @@ public class ProductOperation {
      * The data is saved into the data/products.txt file.
      */
     public void extractProductFromFiles() {
+        String input = "scr/data/temp_products.json";
 
+        ProductDB.getInstance().saveProducts(ProductDB.getInstance().loadProducts(input));
     }
 
     public ProductListResult getProductList(int pageNumber) {
@@ -281,6 +284,13 @@ public class ProductOperation {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        ProductOperation productOperation = new ProductOperation();
+        productOperation.generateCategoryFigure();
+        productOperation.generateDiscountFigure();
+        productOperation.generateLikesCountFigure();
     }
 
 }
