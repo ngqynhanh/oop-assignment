@@ -19,7 +19,7 @@ public class Order {
     // Methods
     @Override
     public String toString() {
-        return "Order{" +
+        return "{" +
                 "order_id:\"" + orderId + '\"' +
                 ",user_id:\"" + userId + '\"' +
                 ",pro_id:\"" + proId + '\"' +
