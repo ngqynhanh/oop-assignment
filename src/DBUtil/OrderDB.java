@@ -58,4 +58,16 @@ public class OrderDB {
 
         return orders;
     }
+
+    public void saveOrders(List<Order> orders) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/orders.json"))) {
+            for (Order order : orders) {
+                String jsonString = order.toString();
+                bw.write(jsonString);
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

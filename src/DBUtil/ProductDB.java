@@ -5,8 +5,7 @@ import Model.Product;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,5 +65,17 @@ public class ProductDB {
         }
 
         return orders;
+    }
+
+    public void saveProducts(List<Product> products) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/products.json"))) {
+            for (Product product : products) {
+                String jsonString = product.toString();
+                bw.write(jsonString);
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
