@@ -79,7 +79,6 @@ public class OrderOperation {
 
     public boolean deleteOrder(String orderId) {
         StringBuilder order = new StringBuilder();
-        String filePath = "src/data/orders.json";
         String fileContent = "";
 
         // read file content
