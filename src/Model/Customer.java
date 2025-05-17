@@ -1,4 +1,5 @@
 package Model;
+
 public class Customer extends User {
     private String email;
     private String phone;
