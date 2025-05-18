@@ -93,7 +93,7 @@ public class UserOperation {
             return false;
         }
         boolean hasLetter = password.matches(".*[a-zA-Z].*"); // kiểm tra xem có ít nhất 1 chữ cái không chữ thường hay hoa đều dc
-        boolean hasDigit = password.matches(".*\\d.*");// có ít nhất 1 số ko ( 0 đến 9)
+        boolean hasDigit = password.matches(".*\\d.*");// có ít nhất 1 số ko ( 0 to 9)
         return hasLetter && hasDigit;
     }
 

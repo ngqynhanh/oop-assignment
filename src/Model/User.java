@@ -14,9 +14,6 @@ public abstract class User {
         this.role = role;
     }
 
-    /**
-     * Constructor with default values
-     */
     public User() {
         this("u_0000000000", "unknown", "^^$$", "01-01-2025_00:00:00", "customer");
     }
