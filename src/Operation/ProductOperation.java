@@ -285,7 +285,7 @@ public class ProductOperation {
         }
     }
 
-    public void deleteAllProducts(String productId) {
+    public void deleteAllProducts() {
         String filePath = "src/data/products.json";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
@@ -294,5 +294,4 @@ public class ProductOperation {
             e.printStackTrace();
         }
     }
-
 }

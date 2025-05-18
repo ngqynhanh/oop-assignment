@@ -139,12 +139,7 @@ public class OrderOperation {
      * Creates 10 customers and randomly generates 50-200 orders for each.
      * Order times should be scattered across different months of the year.
      */
-    /**
 
-// need change when the users classes are done
-    /**
-     * generate password with 8 characters
-     */
     private String generatePassword() {
         StringBuilder password = new StringBuilder();
         Random random = new Random();
@@ -191,7 +186,6 @@ public class OrderOperation {
                 String password = CustomerOperation.getInstance().decryptPassword(rawPassword);
                 String registerTime = generateTime();
 
-
                 // write customer to file
                 customerWriter.write(new Customer(customerId, userName, password, registerTime, userEmail, userPhone).toString());
                 customerWriter.newLine();
@@ -216,7 +210,6 @@ public class OrderOperation {
      * across 12 different months for the given customer.
      * @param customerId The ID of the customer
      */
-    // need change for 12 months (not only for the month the users buy products)
     public void generateSingleCustomerConsumptionFigure(String customerId) {
         List<Order> allOrders = OrderDB.getInstance().getOrders();
         List<Product> allProducts = ProductDB.getInstance().getProducts();
@@ -381,7 +374,7 @@ public class OrderOperation {
         }
     }
 
-    public void deleteAllOrder() {
+    public void deleteAllOrders() {
         String filePath = "src/data/orders.json";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {

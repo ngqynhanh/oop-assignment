@@ -54,6 +54,7 @@ public class UserOperation {
         String content = encryptedPassword.substring(2, encryptedPassword.length() - 2);//bỏ ^^ và $$
         StringBuilder originalPassword = new StringBuilder();
 
+
         for (int i = 0; i < content.length(); i += 3) {// vòng lặp lấy lại giá trị thật
             originalPassword.append(content.charAt(i + 2));//  kí tự thứ 3 là kí tự thật vd X1a
         }
@@ -96,6 +97,7 @@ public class UserOperation {
         boolean hasDigit = password.matches(".*\\d.*");// có ít nhất 1 số ko ( 0 to 9)
         return hasLetter && hasDigit;
     }
+
 
 
     public User login(String name, String password) {
@@ -146,8 +148,6 @@ public class UserOperation {
         else
             return generateUserName();
     }
-
-
     }
 
 
