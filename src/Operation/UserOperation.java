@@ -98,20 +98,20 @@ public class UserOperation {
     }
 
 
-    public User login(String username, String password) {
+    public User login(String name, String password) {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = reader.readLine()) != null) { // đọc file xem da có username đó chưa
-                if (line.contains("\"user_name\":\"" + username + "\"")) {
+                if (line.contains("\"user_name\":\"" + name + "\"")) {
                     String[] tokens = line.replace("{", "").replace("}", "").split(",");// loại bỏ dấu ngoặc nhọn để chỉ lấy nội dung
-                    String id = "", encrypted = "", registerTime = "", role = "";
+                    String id = "", encrypted = "", registeredAt = "", role = "";
                     String email = "", phone = "";
 
                     for (String token : tokens) {
                         token = token.trim();// dùng trim() để đảm bảo ko có khoảng trắng -> ko bị lỗi khi đọc
                         if (token.contains("\"user_id\"")) id = token.split(":")[1].replace("\"", "").trim();// loại bỏ các dấu và lấy id gán vào id
                         else if (token.contains("\"user_password\"")) encrypted = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_register_time\"")) registerTime = token.split(":")[1].replace("\"", "").trim();
+                        else if (token.contains("\"user_register_time\"")) registeredAt = token.split(":")[1].replace("\"", "").trim();
                         else if (token.contains("\"user_role\"")) role = token.split(":")[1].replace("\"", "").trim();
                         else if (token.contains("\"user_email\"")) email = token.split(":")[1].replace("\"", "").trim();
                         else if (token.contains("\"user_mobile\"")) phone = token.split(":")[1].replace("\"", "").trim();
@@ -119,7 +119,9 @@ public class UserOperation {
 
                     if (decryptPassword(encrypted).equals(password)) {
                         if (role.equalsIgnoreCase("customer")) {
-                            return new Customer(id, username, encrypted, registerTime, email, phone);
+                            return new Customer(id, name, encrypted, registeredAt, email, phone);// tạo đối tượng customer nếu l role cus
+                        }else if (role.equalsIgnoreCase("admin")) {
+                            return new User(id, name, encrypted,registeredAt, role) {};// tạo đối tượng admin
                         }
 
                     }
@@ -145,5 +147,9 @@ public class UserOperation {
             return generateUserName();
     }
 
-}
+
+    }
+
+
+
 
