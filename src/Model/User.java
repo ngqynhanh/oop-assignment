@@ -1,5 +1,5 @@
-
-public class User {
+package Model;
+public abstract class User {
     protected String id;
     protected String name;
     protected String password;

@@ -5,7 +5,7 @@ import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class AdminOperation {
+public class AdminOperation extends UserOperation {
     private static final String FILE_PATH ="data/users.json";
     private static AdminOperation instance;
 
@@ -56,7 +56,7 @@ public class AdminOperation {
             writer.newLine();
             return true;
         } catch (IOException e) {
-            System.out.println("[AdminOperation] Error: could not write admin to file.");
+            e.printStackTrace();
             return false;
         }
     }
