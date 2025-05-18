@@ -1,8 +1,6 @@
 package DBUtil;
 
-import Model.Order;
 import Model.Product;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -69,7 +67,7 @@ public class ProductDB {
     }
 
     public void saveProducts(List<Product> products) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/products.json"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/products.json", true))) {
             for (Product product : products) {
                 String jsonString = product.toString();
                 bw.write(jsonString);

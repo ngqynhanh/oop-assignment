@@ -2,8 +2,13 @@ package IOInterface;
 
 import Model.Product;
 import Model.ProductListResult;
+import Operation.AdminOperation;
+import Operation.CustomerOperation;
+import Operation.OrderOperation;
+import Operation.ProductOperation;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class IOInterface {
 
@@ -76,6 +81,62 @@ public class IOInterface {
         System.out.println("6. Generate all statistical figures");
         System.out.println("7. Delete all data");
         System.out.println("8. Logout");
+
+        String choice = getUserInput("Please select an option: ", 1)[0];
+        ProductOperation productOperation = ProductOperation.getInstance();
+        OrderOperation orderOperation = OrderOperation.getInstance();
+        CustomerOperation customerOperation = CustomerOperation.getInstance();
+        AdminOperation adminOperation = AdminOperation.getInstance();
+
+        switch (choice) {
+            case "1":
+                System.out.println("================================");
+                System.out.println("Showing products...");
+                ProductListResult productListResult = productOperation.getProductList(1);
+                for (int i = 0; i < productListResult.getProducts().size(); i++) {
+                    System.out.println(i + 1 + ". " + productOperation.getProductList(1).getProducts().get(i));
+                }
+                break;
+            case "2":
+                System.out.println("================================");
+                System.out.println("Adding customers...");
+                System.out.println("================================");
+                String[] details = getUserInput("Enter customer details (name, email, phone): ", 3);
+                if (details.length == 3) {
+                    System.out.println("Customer added: " + details[0] + ", " + details[1] + ", " + details[2]);
+
+                } else {
+                    System.out.println("Invalid input. Please provide name, email, and phone.");
+                }
+                break;
+            case "3":
+                System.out.println("================================");
+                System.out.println("Showing customers...");
+                break;
+            case "4":
+                System.out.println("================================");
+                System.out.println("Showing orders...");
+                break;
+            case "5":
+                System.out.println("================================");
+                System.out.println("Generating test data...");
+                break;
+            case "6":
+                System.out.println("================================");
+                System.out.println("Generating all statistical figures...");
+                break;
+            case "7":
+                System.out.println("================================");
+                System.out.println("Deleting all data...");
+                break;
+            case "8":
+                System.out.println("================================");
+                System.out.println("Logging out...");
+                break;
+            default:
+                System.out.println("Invalid option. Please try again.");
+                break;
+        }
     }
 
     /**

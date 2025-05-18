@@ -6,9 +6,9 @@ import java.io.*;
 
  public class UserOperation {
      private static UserOperation instance;
-     private final String FILE_PATH = "data/users.json";
+     private final String FILE_PATH = "src/data/users.json";
 
-private UserOperation() {}
+     UserOperation() {}
 
      public static UserOperation getInstance() {
          if (instance == null) {
@@ -69,7 +69,7 @@ private UserOperation() {}
                  }
              }
          } catch (IOException e) { //dùng IOException chính xác hơn cho việc đọc file
-             System.out.println("[checkUsernameExist] Error reading file.");
+             e.printStackTrace();
          }
          return false; // không tìm thấy user name nào thì trả về false
      }
@@ -119,10 +119,25 @@ private UserOperation() {}
                  }
              }
          } catch (IOException e) {
-             System.out.println("[login] Error reading file.");
+             e.printStackTrace();
          }
          return null;
      }
+
+     public String generateUserName() {
+            String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            StringBuilder randomString = new StringBuilder();
+            Random random = new Random();
+            for (int i = 0; i < 5 + random.nextInt(6); i++) {
+                randomString.append(chars.charAt(random.nextInt(chars.length())));
+            }
+            if (UserOperation.getInstance().validateUsername(randomString.toString()) &&
+                    !UserOperation.getInstance().checkUsernameExist(randomString.toString()))
+                return randomString.toString();
+            else
+                return generateUserName();
+     }
+
  }
 
 

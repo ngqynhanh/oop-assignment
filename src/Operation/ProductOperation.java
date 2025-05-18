@@ -177,6 +177,9 @@ public class ProductOperation {
 
         try {
             File output = new File("charts/Category_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, chart, 1200, 600);
         } catch (IOException e) {
             e.printStackTrace();
@@ -223,7 +226,10 @@ public class ProductOperation {
         );
 
         try {
-            File output = new File("charts/Category_Figure.png");
+            File output = new File("charts/Discount_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, pieChart, 800, 600);
         } catch (IOException e) {
             e.printStackTrace();
@@ -270,6 +276,9 @@ public class ProductOperation {
 
         try {
             File output = new File("charts/Likes_Count_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, chart, 1200, 600);
         } catch (IOException e) {
             e.printStackTrace();
@@ -284,13 +293,6 @@ public class ProductOperation {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        ProductOperation productOperation = new ProductOperation();
-        productOperation.generateCategoryFigure();
-        productOperation.generateDiscountFigure();
-        productOperation.generateLikesCountFigure();
     }
 
 }

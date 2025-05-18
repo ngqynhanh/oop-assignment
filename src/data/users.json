@@ -1,97 +1,21 @@
-[
-  {
-    "user_id": "u_0000000001",
-    "user_name": "admin",
-    "user_password": "^^qwXzRtYuI7PaSd$$",
-    "user_register_time": "01-01-2024_09:00:00",
-    "user_role": "admin"
-  },
-  {
-    "user_id": "u_0000000002",
-    "user_name": "john_doe",
-    "user_password": "^^aB3cD4eF5gH6i$$",
-    "user_register_time": "15-01-2024_14:30:45",
-    "user_role": "customer",
-    "user_email": "john.doe@example.com",
-    "user_mobile": "0412345678"
-  },
-  {
-    "user_id": "u_0000000003",
-    "user_name": "jane_smith",
-    "user_password": "^^pQ7rS8tU9vW0x$$",
-    "user_register_time": "22-01-2024_10:15:22",
-    "user_role": "customer",
-    "user_email": "jane.smith@example.com",
-    "user_mobile": "0423456789"
-  },
-  {
-    "user_id": "u_0000000004",
-    "user_name": "michael_brown",
-    "user_password": "^^jK1lM2nO3pQ4r$$",
-    "user_register_time": "05-02-2024_16:45:33",
-    "user_role": "customer",
-    "user_email": "michael.brown@example.com",
-    "user_mobile": "0434567890"
-  },
-  {
-    "user_id": "u_0000000005",
-    "user_name": "emily_davis",
-    "user_password": "^^sT5uV6wX7yZ8a$$",
-    "user_register_time": "12-02-2024_11:20:18",
-    "user_role": "customer",
-    "user_email": "emily.davis@example.com",
-    "user_mobile": "0445678901"
-  },
-  {
-    "user_id": "u_0000000006",
-    "user_name": "david_wilson",
-    "user_password": "^^bC9dE0fG1hI2j$$",
-    "user_register_time": "28-02-2024_09:50:57",
-    "user_role": "customer",
-    "user_email": "david.wilson@example.com",
-    "user_mobile": "0456789012"
-  },
-  {
-    "user_id": "u_0000000007",
-    "user_name": "sarah_taylor",
-    "user_password": "^^kL3mN4oP5qR6s$$",
-    "user_register_time": "10-03-2024_15:05:42",
-    "user_role": "customer",
-    "user_email": "sarah.taylor@example.com",
-    "user_mobile": "0467890123"
-  },
-  {
-    "user_id": "u_0000000008",
-    "user_name": "james_johnson",
-    "user_password": "^^tU7vW8xY9zA0b$$",
-    "user_register_time": "22-03-2024_12:40:29",
-    "user_role": "customer",
-    "user_email": "james.johnson@example.com",
-    "user_mobile": "0478901234"
-  },
-  {
-    "user_id": "u_0000000009",
-    "user_name": "olivia_martin",
-    "user_password": "^^cD1eF2gH3iJ4k$$",
-    "user_register_time": "05-04-2024_08:25:14",
-    "user_role": "customer",
-    "user_email": "olivia.martin@example.com",
-    "user_mobile": "0489012345"
-  },
-  {
-    "user_id": "u_0000000010",
-    "user_name": "mark_anderson",
-    "user_password": "^^lM5nO6pQ7rS8t$$",
-    "user_register_time": "15-04-2024_17:10:36",
-    "user_role": "customer",
-    "user_email": "mark.anderson@example.com",
-    "user_mobile": "0490123456"
-  },
-  {
-    "user_id": "u_0000000011",
-    "user_name": "manager",
-    "user_password": "^^uV9wX0yZ1aB2c$$",
-    "user_register_time": "01-01-2024_10:00:00",
-    "user_role": "admin"
-  }
-]
+{"user_id":"u_0000000001","user_name":"admin","user_password":"^^qwXzRtYuI7PaSd$$","user_register_time":"01-01-2024_09:00:00","user_role":"admin"}
+{"user_id":"u_0000000002","user_name":"john_doe","user_password":"^^aB3cD4eF5gH6i$$","user_register_time":"15-01-2024_14:30:45","user_role":"customer","user_email":"john.doe@example.com","user_mobile":"0412345678"}
+{"user_id":"u_0000000003","user_name":"jane_smith","user_password":"^^pQ7rS8tU9vW0x$$","user_register_time":"22-01-2024_10:15:22","user_role":"customer","user_email":"jane.smith@example.com","user_mobile":"0423456789"}
+{"user_id":"u_0000000004","user_name":"michael_brown","user_password":"^^jK1lM2nO3pQ4r$$","user_register_time":"05-02-2024_16:45:33","user_role":"customer","user_email":"michael.brown@example.com","user_mobile":"0434567890"}
+{"user_id":"u_0000000005","user_name":"emily_davis","user_password":"^^sT5uV6wX7yZ8a$$","user_register_time":"12-02-2024_11:20:18","user_role":"customer","user_email":"emily.davis@example.com","user_mobile":"0445678901"}
+{"user_id":"u_0000000006","user_name":"david_wilson","user_password":"^^bC9dE0fG1hI2j$$","user_register_time":"28-02-2024_09:50:57","user_role":"customer","user_email":"david.wilson@example.com","user_mobile":"0456789012"}
+{"user_id":"u_0000000007","user_name":"sarah_taylor","user_password":"^^kL3mN4oP5qR6s$$","user_register_time":"10-03-2024_15:05:42","user_role":"customer","user_email":"sarah.taylor@example.com","user_mobile":"0467890123"}
+{"user_id":"u_0000000008","user_name":"james_johnson","user_password":"^^tU7vW8xY9zA0b$$","user_register_time":"22-03-2024_12:40:29","user_role":"customer","user_email":"james.johnson@example.com","user_mobile":"0478901234"}
+{"user_id":"u_0000000009","user_name":"olivia_martin","user_password":"^^cD1eF2gH3iJ4k$$","user_register_time":"05-04-2024_08:25:14","user_role":"customer","user_email":"olivia.martin@example.com","user_mobile":"0489012345"}
+{"user_id":"u_0000000010","user_name":"mark_anderson","user_password":"^^lM5nO6pQ7rS8t$$","user_register_time":"15-04-2024_17:10:36","user_role":"customer","user_email":"mark.anderson@example.com","user_mobile":"0490123456"}
+{"user_id":"u_0000000011","user_name":"manager","user_password":"^^uV9wX0yZ1aB2c$$","user_register_time":"01-01-2024_10:00:00","user_role":"admin"}
+Customer{id:"u_0100835555",name:"EQExx",password:"",registeredAt:"20-01-2024_23:50:2024",role:"customer",email:"EQExx@example.com",phone:"0186366187"}
+Customer{id:"u_0826403583",name:"QvZQSSu",password:"",registeredAt:"24-08-2024_16:10:2024",role:"customer",email:"QvZQSSu@example.com",phone:"0957892762"}
+Customer{id:"u_0478276879",name:"Asxwf",password:"",registeredAt:"13-12-2025_08:33:2024",role:"customer",email:"Asxwf@example.com",phone:"0429658598"}
+Customer{id:"u_0809169841",name:"WbWNUCF",password:"",registeredAt:"01-05-2025_12:18:2024",role:"customer",email:"WbWNUCF@example.com",phone:"0335898791"}
+Customer{id:"u_0238116694",name:"zrbtmA",password:"",registeredAt:"19-09-2023_01:19:2024",role:"customer",email:"zrbtmA@example.com",phone:"0112417874"}
+Customer{id:"u_0782020708",name:"wjAdKecx",password:"",registeredAt:"13-06-2024_21:54:2024",role:"customer",email:"wjAdKecx@example.com",phone:"0691587635"}
+Customer{id:"u_0387162865",name:"Iclqk",password:"",registeredAt:"09-04-2025_04:08:2024",role:"customer",email:"Iclqk@example.com",phone:"0150348335"}
+Customer{id:"u_0446554643",name:"sEuebq",password:"",registeredAt:"20-10-2023_04:53:2024",role:"customer",email:"sEuebq@example.com",phone:"0415071821"}
+Customer{id:"u_0287029304",name:"Vdvmby",password:"",registeredAt:"27-10-2023_01:33:2024",role:"customer",email:"Vdvmby@example.com",phone:"0330479544"}
+Customer{id:"u_0463604528",name:"DFtvQ",password:"",registeredAt:"25-10-2024_12:18:2024",role:"customer",email:"DFtvQ@example.com",phone:"0116540182"}
