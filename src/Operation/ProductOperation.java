@@ -1,5 +1,6 @@
 package Operation;
 
+import DBUtil.OrderDB;
 import DBUtil.ProductDB;
 import Model.Product;
 import Model.ProductListResult;
@@ -35,7 +36,9 @@ public class ProductOperation {
      * The data is saved into the data/products.txt file.
      */
     public void extractProductFromFiles() {
+        String input = "scr/data/temp_products.json";
 
+        ProductDB.getInstance().saveProducts(ProductDB.getInstance().loadProducts(input));
     }
 
     public ProductListResult getProductList(int pageNumber) {
@@ -174,6 +177,9 @@ public class ProductOperation {
 
         try {
             File output = new File("charts/Category_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, chart, 1200, 600);
         } catch (IOException e) {
             e.printStackTrace();
@@ -220,7 +226,10 @@ public class ProductOperation {
         );
 
         try {
-            File output = new File("charts/Category_Figure.png");
+            File output = new File("charts/Discount_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, pieChart, 800, 600);
         } catch (IOException e) {
             e.printStackTrace();
@@ -267,6 +276,9 @@ public class ProductOperation {
 
         try {
             File output = new File("charts/Likes_Count_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, chart, 1200, 600);
         } catch (IOException e) {
             e.printStackTrace();

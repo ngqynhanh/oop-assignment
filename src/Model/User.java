@@ -1,10 +1,11 @@
+package Model;
 
 public class User {
-    protected String id;
-    protected String name;
-    protected String password;
-    protected String registeredAt;
-    protected String role;
+    private String id;
+    private String name;
+    private String password;
+    private String registeredAt;
+    private String role;
 
     public User(String id, String name, String password, String registeredAt, String role) {
         this.id = id;

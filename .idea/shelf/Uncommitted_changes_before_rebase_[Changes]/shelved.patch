@@ -1,0 +1,14 @@
+Index: src/Models/Product.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Models/Product.java b/src/Models/Product.java
+new file mode 100644
+--- /dev/null	(date 1747059054558)
++++ b/src/Models/Product.java	(date 1747059054558)
+@@ -0,0 +1,4 @@
++package Models;
++
++public class Product {
++}

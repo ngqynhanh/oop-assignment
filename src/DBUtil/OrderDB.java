@@ -9,7 +9,8 @@ import java.util.*;
 
 public class OrderDB {
     private static OrderDB instance;
-    final private List<Order> orderList = loadOrders();
+    private static final String FILE_PATH = "src/data/orders.json";
+    final private List<Order> orderList = loadOrders(FILE_PATH);
 
     private OrderDB() {
     }
@@ -33,14 +34,15 @@ public class OrderDB {
         return orderList;
     }
 
-    private static List<Order> loadOrders() {
+    public List<Order> loadOrders(String FILE_PATH) {
         List<Order> orders = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("src/data/orders.json"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = br.readLine()) != null) {
                 line = line.trim();
-                if (line.isEmpty()) continue;
+                if (line.isEmpty())
+                    continue;
 
                 JSONObject json = new JSONObject(line);
                 String orderId = json.optString("order_id", null);
@@ -52,7 +54,7 @@ public class OrderDB {
                     orders.add(new Order(orderId, userId, proId, orderTime));
                 }
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -60,7 +62,7 @@ public class OrderDB {
     }
 
     public void saveOrders(List<Order> orders) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/orders.json"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/orders.json", true))) {
             for (Order order : orders) {
                 String jsonString = order.toString();
                 bw.write(jsonString);

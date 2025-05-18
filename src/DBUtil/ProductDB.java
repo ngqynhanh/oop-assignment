@@ -1,8 +1,6 @@
 package DBUtil;
 
-import Model.Order;
 import Model.Product;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -11,7 +9,8 @@ import java.util.List;
 
 public class ProductDB {
     private static ProductDB instance;
-    final private List<Product> productList = loadProducts();
+    private final String FILE_PATH = "src/data/products.json";
+    final private List<Product> productList = loadProducts(FILE_PATH);
 
     private ProductDB() {
     }
@@ -35,10 +34,10 @@ public class ProductDB {
         return productList;
     }
 
-    private static List<Product> loadProducts() {
+    public List<Product> loadProducts(String FILE_PATH) {
         List<Product> orders = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("src/data/products.json"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = br.readLine()) != null) {
                 line = line.trim();
@@ -68,7 +67,7 @@ public class ProductDB {
     }
 
     public void saveProducts(List<Product> products) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/products.json"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/products.json", true))) {
             for (Product product : products) {
                 String jsonString = product.toString();
                 bw.write(jsonString);

@@ -1,3 +1,4 @@
+package Model;
 
 public class Customer extends User {
     private String email;
@@ -21,14 +22,14 @@ public class Customer extends User {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id:\"" + id + '\"' +
-                ",name:\"" + name + '\"' +
-                ",password:\"" + password + '\"' +
-                ",registeredAt:\"" + registeredAt + '\"' +
-                ",role:\"" + role + '\"' +
-                ",email:\"" + email + '\"' +
-                ",phone:\"" + phone + '\"' +
+        return "{" +
+                "\"user_id\":\"" + getId() + '\"' +
+                ",\"user_name\":\"" + getName() + '\"' +
+                ",\"user_password\":\"" + getPassword() + '\"' +
+                ",\"user_registered_at\":\"" + getRegisteredAt() + '\"' +
+                ",\"user_role\":\"" + getRole() + '\"' +
+                ",\"user_email\":\"" + email + '\"' +
+                ",\"user_mobile\":\"" + phone + '\"' +
                 '}';
     }
 
