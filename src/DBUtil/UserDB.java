@@ -54,35 +54,16 @@ public class UserDB {
         return users;
     }
 
-    public void saveUsers(List<User> users) {
+    public void saveUsers(User user) {
         // Implement save logic if needed
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/users.json", true))) {
-            for (User user : users) {
-                String jsonString = user.toString();
-                bw.write(jsonString);
-                bw.newLine();
-            }
+            String jsonString = user.toString();
+            bw.write(jsonString);
+            bw.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public boolean checkUsernameExist(String username) {
-        for (User user : userList) {
-            if (user.getName().equals(username)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean checkUserIdExist(String userId) {
-        for (User user : userList) {
-            if (user.getId().equals(userId)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
 }

@@ -230,5 +230,4 @@ public class CustomerOperation extends UserOperation {
         }
         return phone.toString();
     }
-
 }

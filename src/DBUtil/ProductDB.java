@@ -11,6 +11,7 @@ public class ProductDB {
     private static ProductDB instance;
     private final String FILE_PATH = "src/data/products.json";
     final private List<Product> productList = loadProducts(FILE_PATH);
+    private int numberOfProducts = 0;
 
     private ProductDB() {
     }
