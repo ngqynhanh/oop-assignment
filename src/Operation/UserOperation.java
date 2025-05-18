@@ -154,6 +154,17 @@ public class UserOperation {
          }
          return false;
      }
+
+    public static void main(String[] args) {
+        //check decryptPassword
+        String encryptedPassword = "^^qwXzRtYuI7PaSd$$";
+        String decryptedPassword = UserOperation.getInstance().decryptPassword(encryptedPassword);
+        System.out.println("Decrypted Password: " + decryptedPassword);
+
+        //check encyptPassword
+        System.out.println("Encrypted Password: " + UserOperation.getInstance().encryptPassword(decryptedPassword));
+
+    }
 }
 
 

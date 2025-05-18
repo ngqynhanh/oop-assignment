@@ -1,6 +1,5 @@
 package DBUtil;
 
-import Model.Product;
 import Model.User;
 import org.json.JSONObject;
 

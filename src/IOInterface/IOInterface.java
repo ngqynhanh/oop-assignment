@@ -79,16 +79,14 @@ public class IOInterface {
                 User user = userOperation.login(username, password);
                 if (user.getRole().equals("admin")) {
                     System.out.println("Login successful. Welcome, " + username + "!");
-                    userID = user.getId();
                     adminMenu();
                 } else if (user.getRole().equals("customer")) {
                     System.out.println("Login successful. Welcome, " + username + "!");
-                    userID = user.getId();
                     customerMenu();
                 } else {
                     System.out.println("Invalid username or password.");
                 }
-                break;
+                mainMenu();
             case "2":
                 System.out.println("================================");
                 System.out.println("Register");
@@ -104,10 +102,10 @@ public class IOInterface {
                 } else {
                     System.out.println("Registration failed. Username may already exist or invalid input.");
                 }
-                break;
+                mainMenu();
             case "3":
                 System.out.println("Exiting the system...");
-                break;
+                System.exit(0);
             default:
                 System.out.println("Invalid option. Please try again.");
         }
@@ -167,7 +165,7 @@ public class IOInterface {
                             System.out.println("Already on the first page.");
                         }
                     } else if (choice.equals("b")) {
-                        break;
+                        mainMenu();
                     } else {
                         System.out.println("Invalid choice. Please try again.");
                     }
@@ -194,7 +192,7 @@ public class IOInterface {
                         System.out.println("Failed to add customer " + username + ". Username may already exist or invalid input.");
                     }
                 }
-                break;
+                mainMenu();
             case "3":
                 System.out.println("================================");
                 System.out.println("Showing customers...");
@@ -222,12 +220,11 @@ public class IOInterface {
                             System.out.println("Already on the first page.");
                         }
                     } else if (choice.equals("b")) {
-                        break;
+                        mainMenu();
                     } else {
                         System.out.println("Invalid choice. Please try again.");
                     }
                 }
-                break;
             case "4":
                 System.out.println("================================");
                 System.out.println("Showing orders...");
@@ -255,12 +252,11 @@ public class IOInterface {
                             System.out.println("Already on the first page.");
                         }
                     } else if (choice.equals("b")) {
-                        break;
+                        mainMenu();
                     } else {
                         System.out.println("Invalid choice. Please try again.");
                     }
                 }
-                break;
             case "5":
                 System.out.println("================================");
                 System.out.println("Generating test data...");
@@ -268,7 +264,7 @@ public class IOInterface {
                 for(int i = 0; i < OrderDB.getInstance().getOrders().size(); i++) {
                     System.out.println(i + 1 + ". " + OrderDB.getInstance().getOrders().get(i));
                 }
-                break;
+                mainMenu();
             case "6":
                 System.out.println("================================");
                 System.out.println("Generating all statistical figures...");
@@ -281,7 +277,7 @@ public class IOInterface {
                 productOperation.generateDiscountFigure();
                 productOperation.generateCategoryFigure();
                 productOperation.generateCategoryFigure();
-                break;
+                mainMenu();
             case "7":
                 System.out.println("================================");
                 System.out.println("Deleting all data...");
@@ -295,14 +291,14 @@ public class IOInterface {
                 } else {
                     System.out.println("Data deletion canceled.");
                 }
-                break;
+                mainMenu();
             case "8":
                 System.out.println("================================");
                 System.out.println("Logging out...");
-                break;
+                System.exit(0);
             default:
                 System.out.println("Invalid option. Please try again.");
-                break;
+                mainMenu();
         }
     }
 
@@ -342,7 +338,7 @@ public class IOInterface {
                 System.out.println("================================");
                 System.out.println("Showing profile...");
                 System.out.println(customer.toString());
-                break;
+                mainMenu();
             case "2":
                 System.out.println("================================");
                 System.out.println("Updating profile...");
@@ -351,28 +347,29 @@ public class IOInterface {
                     System.out.println("Profile updated successfully.");
                 else
                     System.out.println("Profile update failed.");
-                break;
+                mainMenu();
             case "3":
                 System.out.println("================================");
                 System.out.println("Showing products...");
                 productOperation.getProductById(customer.getId());
-                break;
+                mainMenu();
             case "4":
                 System.out.println("================================");
                 System.out.println("Showing history orders...");
                 orderOperation.getOrderList(customer.getId(), 1);
-                break;
+                mainMenu();
             case "5":
                 System.out.println("================================");
                 System.out.println("Generating all consumption figures...");
                 orderOperation.generateSingleCustomerConsumptionFigure(customer.getId());
-                break;
+                mainMenu();
             case "6":
                 System.out.println("================================");
                 System.out.println("Logging out...");
-                break;
+                System.exit(0);
             default:
                 System.out.println("Invalid option. Please try again.");
+                mainMenu();
         }
 
 
