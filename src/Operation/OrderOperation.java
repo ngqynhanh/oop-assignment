@@ -4,7 +4,7 @@ import DBUtil.ProductDB;
 import DBUtil.UserDB;
 import Model.Customer;
 import Model.Product;
-import org.jfree.chart.ChartFactory;
+import org.jfree.chart.*;
 import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
@@ -15,10 +15,11 @@ import DBUtil.OrderDB;
 import Model.Order;
 import Model.OrderListResult;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
-public class OrderOperation {
+public class OrderOperation extends GUI {
     private String filePath = "src/data/orders.json";
     private static OrderOperation instance;
 
@@ -191,13 +192,14 @@ public class OrderOperation {
                 customerWriter.newLine();
                 for (int j = 0; j < orderCount; j++) {
                     String orderId = generateUniqueOrder();
-                    String productId = "p" + (int) (Math.random() * 100);
+                    String productId = "p" + String.format("%03d", (int) (Math.random() * 20) + 1);
                     String orderTime = generateTime();
 
                     // write order to file
                     orderWriter.write(new Order(orderId, customerId, productId, orderTime).toString());
                     orderWriter.newLine();
                 }
+                UserDB.getInstance().getUsers().add(new Customer(customerId, userName, password, registerTime, userEmail, userPhone));
             }
         }
         catch (IOException e) {
@@ -231,7 +233,7 @@ public class OrderOperation {
         // Accumulate consumption by month
         for (Order order : customerOrders) {
             String orderTime = order.getOrderTime();
-            String month = orderTime.substring(3, 5); // assumes format is "dd-MM-yyyy_..."
+            String month = String.format("%02d", Integer.parseInt(orderTime.substring(3, 5)));// assumes format is "dd-MM-yyyy_..."
             String productId = order.getProId();
 
             for (Product product : allProducts) {
@@ -256,12 +258,14 @@ public class OrderOperation {
                 dataset
         );
 
+        showChartInGUI(chart);
+
         CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
         renderer.setMaximumBarWidth(0.1);
 
         try {
-            File output = new File("charts/Single_Customer_Consumption_Figure.png");
+            File output = new File("src/data/figure/Single_Customer_Consumption_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -305,12 +309,14 @@ public class OrderOperation {
                 dataset
         );
 
+        showChartInGUI(chart);
+
         CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
         renderer.setMaximumBarWidth(0.2);
 
         try {
-            File output = new File("charts/All_Customer_Consumption_Figure.png");
+            File output = new File("src/data/figure/All_Customer_Consumption_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -358,13 +364,16 @@ public class OrderOperation {
                 "Sales Count",
                 dataset
         );
+
+        showChartInGUI(chart);
+
         // save chart as image
         CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
         renderer.setMaximumBarWidth(0.2);
 
         try {
-            File output = new File("charts/Top_10_Best-Selling_Products_Figure.png");
+            File output = new File("src/data/figure/Top_10_Best-Selling_Products_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -383,5 +392,4 @@ public class OrderOperation {
             e.printStackTrace();
         }
     }
-
 }

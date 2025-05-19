@@ -1,7 +1,9 @@
 package Operation;
 
+import DBUtil.UserDB;
 import Model.Customer;
 import Model.CustomerListResult;
+import Model.User;
 
 import java.io.*;
 import java.util.*;
@@ -55,24 +57,18 @@ public class CustomerOperation extends UserOperation {
         String encryptedPassword = userOp.encryptPassword(userPassword);
         String registerTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm:ss"));
 
-        String jsonRecord = String.format(
-                "{\"user_id\":\"%s\", \"user_name\":\"%s\", \"user_password\":\"%s\", " +
-                        "\"user_register_time\":\"%s\", \"user_role\":\"customer\", " +
-                        "\"user_email\":\"%s\", \"user_mobile\":\"%s\"}",
-                userId, userName, encryptedPassword, registerTime, userEmail, userMobile
-        );
+        Customer customer = new Customer(userId, userName, encryptedPassword, registerTime, userEmail, userMobile);
+        int index = UserDB.getInstance().getUsers().indexOf(customer);
+        UserDB.getInstance().saveUsers(customer);
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            writer.write(jsonRecord);
-            writer.newLine();
+        UserDB.getInstance().getUsers().add(customer);
+        int indexAfter = UserDB.getInstance().getUsers().indexOf(customer);
+        if (indexAfter > index ) {
             return true;
-        } catch (IOException e) {
-            e.printStackTrace();
+        } else {
             return false;
         }
-
     }
-
 
     //dùng để cập nhật thông tin ví dụ như khi muốn đổi mật phẩu, email, sdt
     public boolean updateProfile(String attributeName, String value, Customer customer) {
@@ -115,8 +111,8 @@ public class CustomerOperation extends UserOperation {
 
     // XOA CUSTOMER DUA TREN ID
     //    1.đọc từng dòng
-//        2.ghi lại tất cả dòng ko bị xóa vào file tạm
-//        3.Ghi xong thì xóa file cũ → đổi tên file tạm thành file gốc
+    //        2.ghi lại tất cả dòng ko bị xóa vào file tạm
+    //        3.Ghi xong thì xóa file cũ → đổi tên file tạm thành file gốc
     public boolean deleteCustomer(String customerId) {
         try {
             File inputFile = new File(FILE_PATH);

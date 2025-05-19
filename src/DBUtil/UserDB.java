@@ -67,6 +67,4 @@ public class UserDB {
             e.printStackTrace();
         }
     }
-
-
 }
