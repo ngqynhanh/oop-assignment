@@ -22,13 +22,13 @@ public class Customer extends User {
     @Override
     public String toString() {
         return "{" +
-                "\"user_id\": \"" + id + "\"," +
-                "\"user_name\": \"" + name + "\"," +
-                "\"user_password\": \"" + password + "\"," +
+                "\"user_id\":\"" + id + "\"," +
+                "\"user_name\":\"" + name + "\"," +
+                "\"user_password\":\"" + password + "\"," +
                 "\"user_register_time\": \"" + registeredAt + "\"," +
-                "\"user_role\": \"" + role + "\"," +
-                "\"user_email\": \"" + email + "\"," +
-                "\"user_mobile\": \"" + phone + "\"" +
+                "\"user_role\":\"" + role + "\"," +
+                "\"user_email\":\"" + email + "\"," +
+                "\"user_mobile\":\"" + phone + "\"" +
                 "}";
     }
 

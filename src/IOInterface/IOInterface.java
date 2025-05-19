@@ -14,7 +14,6 @@ public class IOInterface {
 
     private static IOInterface instance = null;
     private Scanner scanner = new Scanner(System.in);
-    private static String userID = null;
     private ProductOperation productOperation = ProductOperation.getInstance();
     private OrderOperation orderOperation = OrderOperation.getInstance();
     private CustomerOperation customerOperation = CustomerOperation.getInstance();
@@ -91,7 +90,7 @@ public class IOInterface {
             case "2":
                 System.out.println("================================");
                 System.out.println("Register");
-                String[] registerDetails = getUserInput("Enter your username and password: ", 4);
+                String[] registerDetails = getUserInput("Enter your username, password, email, and mobile number: ", 4);
                 String regUsername = registerDetails[0];
                 String regPassword = registerDetails[1];
                 String regEmail = registerDetails[2];
@@ -99,17 +98,17 @@ public class IOInterface {
 
                 if (customerOperation.registerCustomer(regUsername, regPassword, regEmail, regPhone)) {
                     System.out.println("Registration successful. Welcome, " + regUsername + "!");
+                    for (User user : UserDB.getInstance().getUsers()) {
+                        if (user.getId().equals(regUsername) && user instanceof Customer) {
+                            IOInterface.user = new Customer(user.getId(), user.getName(), user.getPassword(), user.getRegisteredAt(), ((Customer) user).getEmail(), ((Customer) user).getPhone());
+                            break;
+                        }
+                    }
                     customerMenu();
                 } else {
                     System.out.println("Registration failed. Username may already exist or invalid input.");
                 }
 
-                for (User user : UserDB.getInstance().getUsers()) {
-                    if (user.getId().equals(regUsername) && user instanceof Customer) {
-                        this.user = new Customer(user.getId(), user.getName(), user.getPassword(), user.getRegisteredAt(), ((Customer) user).getEmail(), ((Customer) user).getPhone());
-                        break;
-                    }
-                }
 
                 mainMenu();
             case "3":
@@ -197,6 +196,12 @@ public class IOInterface {
 
                     if (customerOperation.registerCustomer(username, password, email, phone)) {
                         System.out.println("Customer " + username + " added successfully.");
+                        for (User user : UserDB.getInstance().getUsers()) {
+                            if (user.getId().equals(username) && user instanceof Customer) {
+                                IOInterface.user = new Customer(user.getId(), user.getName(), user.getPassword(), user.getRegisteredAt(), ((Customer) user).getEmail(), ((Customer) user).getPhone());
+                                break;
+                            }
+                        }
                     } else {
                         System.out.println("Failed to add customer " + username + ". Username may already exist or invalid input.");
                     }
@@ -377,7 +382,13 @@ public class IOInterface {
             case "1":
                 System.out.println("================================");
                 System.out.println("Showing profile...");
-                printObject(IOInterface.user);
+                printMessage("User ID: " + user.getId()
+                        + "\nUser Name: " + user.getName()
+                        + "\nUser Password: " + UserOperation.getInstance().decryptPassword(IOInterface.user.getPassword())
+                        + "\nUser Role: " + user.getRole()
+                        + "\nUser Register Time: " + user.getRegisteredAt()
+                        + "\nUser Email: " + ((Customer) user).getEmail()
+                        + "\nUser Mobile: " + ((Customer) user).getPhone());
                 customerMenu();
             case "2":
                 System.out.println("================================");

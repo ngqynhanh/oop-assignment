@@ -67,4 +67,15 @@ public class UserDB {
             e.printStackTrace();
         }
     }
+
+    public void saveAllUsers() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (User user : getUsers()) {
+                bw.write(user.toString()); // `Customer` has proper JSON format
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

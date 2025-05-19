@@ -21,13 +21,13 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id:\"" + id + '\"' +
-                ",name:\"" + name + '\"' +
-                ",password:\"" + password + '\"' +
-                ",registeredAt:\"" + registeredAt + '\"' +
-                ",role:\"" + role + '\"' +
-                '}';
+        return "{" +
+                "\"user_id\":\"" + id + "\"," +
+                "\"user_name\":\"" + name + "\"," +
+                "\"user_password\":\"" + password + "\"," +
+                "\"user_register_time\": \"" + registeredAt + "\"," +
+                "\"user_role\":\"" + role + "\"," +
+                "}";
     }
 
     public String getId() {

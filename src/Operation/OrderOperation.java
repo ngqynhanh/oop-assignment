@@ -184,7 +184,7 @@ public class OrderOperation extends GUI {
                 String userEmail = userName + "@example.com";
                 String userPhone = CustomerOperation.getInstance().generateCustomerPhone();
                 String rawPassword = generatePassword();
-                String password = CustomerOperation.getInstance().decryptPassword(rawPassword);
+                String password = userOperation.encryptPassword(rawPassword);
                 String registerTime = generateTime();
 
                 // write customer to file
