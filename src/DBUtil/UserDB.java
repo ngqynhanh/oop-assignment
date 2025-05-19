@@ -1,5 +1,7 @@
 package DBUtil;
 
+import Model.Admin;
+import Model.Customer;
 import Model.User;
 import org.json.JSONObject;
 
@@ -43,8 +45,10 @@ public class UserDB {
                 String userRegisterTime = json.optString("user_register_time", null);
                 String userRole = json.optString("user_role", null);
 
-                if (userId != null && userName != null && userPassword != null && userRegisterTime != null && userRole != null) {
-                    users.add(new User(userId, userName, userPassword, userRegisterTime, userRole));
+                if (userRole.equalsIgnoreCase("customer")) {
+                    users.add(new Customer(userId, userName, userPassword, userRegisterTime, json.optString("user_email", ""), json.optString("user_mobile", "")));
+                } else if (userRole.equalsIgnoreCase("admin")) {
+                    users.add(new Admin(userId, userName, userPassword, userRegisterTime));
                 }
             }
         } catch (IOException e) {
@@ -64,5 +68,14 @@ public class UserDB {
         }
     }
 
-
+    public void saveAllUsers() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (User user : getUsers()) {
+                bw.write(user.toString()); // `Customer` has proper JSON format
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

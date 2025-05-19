@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class ProductOperation {
+public class ProductOperation extends GUI {
     private String filePath = "src/data/products.json";
     private static ProductOperation instance;
 
@@ -37,7 +37,6 @@ public class ProductOperation {
      */
     public void extractProductFromFiles() {
         String input = "scr/data/temp_products.json";
-
         ProductDB.getInstance().saveProducts(ProductDB.getInstance().loadProducts(input));
     }
 
@@ -170,13 +169,16 @@ public class ProductOperation {
                 "Count",
                 dataset
         );
+
+        showChartInGUI(chart);
+
         // save chart as image
         CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
         renderer.setMaximumBarWidth(0.1);
 
         try {
-            File output = new File("charts/Category_Figure.png");
+            File output = new File("src/data/figure/Category_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -225,8 +227,10 @@ public class ProductOperation {
                 false
         );
 
+        showChartInGUI(pieChart);
+
         try {
-            File output = new File("charts/Discount_Figure.png");
+            File output = new File("src/data/figure/Discount_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -269,6 +273,9 @@ public class ProductOperation {
                 "Likes Count",
                 dataset
         );
+
+        showChartInGUI(chart);
+
         // save chart as image
         CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
@@ -293,5 +300,12 @@ public class ProductOperation {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        ProductOperation productOperation = new ProductOperation();
+        productOperation.generateCategoryFigure();
+        productOperation.generateDiscountFigure();
+        productOperation.generateLikesCountFigure();
     }
 }

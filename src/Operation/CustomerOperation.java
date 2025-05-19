@@ -1,8 +1,11 @@
 package Operation;
 
+import DBUtil.UserDB;
 import Model.Customer;
 import Model.CustomerListResult;
+import Model.User;
 
+import org.json.*;
 import java.io.*;
 import java.util.*;
 import java.time.LocalDateTime;
@@ -55,68 +58,78 @@ public class CustomerOperation extends UserOperation {
         String encryptedPassword = userOp.encryptPassword(userPassword);
         String registerTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm:ss"));
 
-        String jsonRecord = String.format(
-                "{\"user_id\":\"%s\", \"user_name\":\"%s\", \"user_password\":\"%s\", " +
-                        "\"user_register_time\":\"%s\", \"user_role\":\"customer\", " +
-                        "\"user_email\":\"%s\", \"user_mobile\":\"%s\"}",
-                userId, userName, encryptedPassword, registerTime, userEmail, userMobile
-        );
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            writer.write(jsonRecord);
-            writer.newLine();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-
+        Customer customer = new Customer(userId, userName, encryptedPassword, registerTime, userEmail, userMobile);
+        UserDB.getInstance().saveUsers(customer);
+        UserDB.getInstance().getUsers().add(customer);
+        UserDB.getInstance().saveAllUsers();
+        return true;
     }
-
 
     //dùng để cập nhật thông tin ví dụ như khi muốn đổi mật phẩu, email, sdt
     public boolean updateProfile(String attributeName, String value, Customer customer) {
         if (attributeName == null || value == null || customer == null) return false;
 
-        switch (attributeName.toLowerCase()) {//toLowerCase() giúp so sánh ko phân biệt chữ hoa/thường
+        List<User> users = UserDB.getInstance().getUsers();
+        boolean updated = false;
+
+        switch (attributeName.toLowerCase()) {
             case "user_name":
-                if (!UserOperation.getInstance().validateUsername(value)) {
-                    return false;
+                if (!UserOperation.getInstance().validateUsername(value)) return false;
+                for (User user : users) {
+                    if (user.getId().equals(customer.getId())) {
+                        user.setName(value);
+                        updated = true;
+                    }
                 }
-                customer.setName(value);// hợp lệ thì gọi customer.setName(value) để gán lại tên mới
                 break;
 
             case "user_password":
-                if (!UserOperation.getInstance().validatePassword(value)) {
-                    return false;
+                if (!UserOperation.getInstance().validatePassword(value)) return false;
+                for (User user : users) {
+                    if (user.getId().equals(customer.getId())) {
+                        user.setPassword(UserOperation.getInstance().encryptPassword(value));
+                        updated = true;
+                    }
                 }
-                customer.setPassword(UserOperation.getInstance().encryptPassword(value));
                 break;
 
             case "user_email":
-                if (!validateEmail(value)) {
-                    return false;
+                if (!validateEmail(value)) return false;
+                for (User user : users) {
+                    if (user.getId().equals(customer.getId()) && user instanceof Customer) {
+                        ((Customer) user).setEmail(value);
+                        updated = true;
+                    }
                 }
-                customer.setEmail(value);
                 break;
 
             case "user_mobile":
-                if (!validateMobile(value)) {
-                    return false;
+                if (!validateMobile(value)) return false;
+                for (User user : users) {
+                    if (user.getId().equals(customer.getId()) && user instanceof Customer) {
+                        ((Customer) user).setPhone(value);
+                        updated = true;
+                    }
                 }
-                customer.setPhone(value);
                 break;
+
             default:
                 return false;
         }
-        return true;
+
+        if (updated) {
+            UserDB.getInstance().saveAllUsers(); // Persist the changes
+        }
+
+        return updated;
     }
+
 
 
     // XOA CUSTOMER DUA TREN ID
     //    1.đọc từng dòng
-//        2.ghi lại tất cả dòng ko bị xóa vào file tạm
-//        3.Ghi xong thì xóa file cũ → đổi tên file tạm thành file gốc
+    //        2.ghi lại tất cả dòng ko bị xóa vào file tạm
+    //        3.Ghi xong thì xóa file cũ → đổi tên file tạm thành file gốc
     public boolean deleteCustomer(String customerId) {
         try {
             File inputFile = new File(FILE_PATH);
@@ -155,40 +168,34 @@ public class CustomerOperation extends UserOperation {
         int pageSize = 10; //	Mỗi trang chứa tối đa 10 khách hàng
         int start = (pageNumber - 1) * pageSize;// customer bắt đầu từ bao nhiều  ví dụ có 25 khách và gọi từ trang 2 start = (2 - 1) * 10 = 10
         int end = start + pageSize;// đến bao nhiêu vd end = 10 + 10 = 20
+        int totalPages = (int) Math.ceil(totalCustomers / 10.0); //tính tổng số trang cần có để hiển thị hết toàn bộ customer, Math.ceil làm tròn lên lỡ có dư thì thêm 1 trang
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.contains("\"user_role\":\"customer\"")) {// chỉ xử lí các dòng có "user_role":"customer"
-                    totalCustomers++;
-                    if (totalCustomers > start && totalCustomers <= end) {
-                        // totalCustomer > 10 && totalCustomer <= 20 ( lấy khách hàng từ 11 đến 20)
+            while ((line = br.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty())
+                    continue;
 
-                        String[] tokens = line.replace("{", "").replace("}", "").split(",");
-                        String id = "", name = "", password = "", registerTime = "", email = "", mobile = "";
-                        for (String token : tokens) {
-                            token = token.trim();
-                            if (token.contains("\"user_id\"")) id = token.split(":")[1].replace("\"", "").trim();
-                            else if (token.contains("\"user_name\""))
-                                name = token.split(":")[1].replace("\"", "").trim();
-                            else if (token.contains("\"user_password\""))
-                                password = token.split(":")[1].replace("\"", "").trim();
-                            else if (token.contains("\"user_register_time\""))
-                                registerTime = token.split(":")[1].replace("\"", "").trim();
-                            else if (token.contains("\"user_email\""))
-                                email = token.split(":")[1].replace("\"", "").trim();
-                            else if (token.contains("\"user_mobile\""))
-                                mobile = token.split(":")[1].replace("\"", "").trim();
-                        }
-                        customers.add(new Customer(id, name, password, registerTime, email, mobile));
-                    }
+                JSONObject json = new JSONObject(line);
+                String userId = json.optString("user_id", null);
+                String userName = json.optString("user_name", null);
+                String userPassword = json.optString("user_password", null);
+                String userRegisterTime = json.optString("user_register_time", null);
+                String userRole = json.optString("user_role", null);
+                String userEmail = json.optString("user_email", null);
+                String userMobile = json.optString("user_mobile", null);
+
+                if (userRole.equalsIgnoreCase("customer")) {
+                    Customer customer = new Customer(userId, userName, userPassword, userRegisterTime, userEmail, userMobile);
+                    customers.add(customer); // thêm customer vào danh sách
+                    totalCustomers++; // tăng tổng số customer lên 1
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        int totalPages = (int) Math.ceil(totalCustomers / 10.0); //tính tổng số trang cần có để hiển thị hết toàn bộ customer, Math.ceil làm tròn lên lỡ có dư thì thêm 1 trang
         return new CustomerListResult(customers, pageNumber, totalPages);
         // trả về 1. danh sách các customer của trang yêu cầu
         //        2. trang hiện tại mà bạn đang xem
