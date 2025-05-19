@@ -317,6 +317,7 @@ public class IOInterface {
                     orderOperation.generateSingleCustomerConsumptionFigure(customerId);
                     System.out.println("Single Customer Consumption Figure: " + customerId + " generated.");
                 }
+
                 orderOperation.generateAllCustomersConsumptionFigure();
                 System.out.println("All Customers Consumption Figure generated.");
 

@@ -169,13 +169,16 @@ public class ProductOperation extends GUI {
                 "Count",
                 dataset
         );
+
+        showChartInGUI(chart);
+
         // save chart as image
         CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
         renderer.setMaximumBarWidth(0.1);
 
         try {
-            File output = new File("charts/Category_Figure.png");
+            File output = new File("src/data/figure/Category_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -227,7 +230,7 @@ public class ProductOperation extends GUI {
         showChartInGUI(pieChart);
 
         try {
-            File output = new File("charts/Discount_Figure.png");
+            File output = new File("src/data/figure/Discount_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -297,5 +300,12 @@ public class ProductOperation extends GUI {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        ProductOperation productOperation = new ProductOperation();
+        productOperation.generateCategoryFigure();
+        productOperation.generateDiscountFigure();
+        productOperation.generateLikesCountFigure();
     }
 }
