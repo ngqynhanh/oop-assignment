@@ -72,7 +72,7 @@ public class IOInterface {
             case "1":
                 System.out.println("================================");
                 System.out.println("Log in");
-                String[] loginDetails = getUserInput("Enter your username and password: ", 2);
+                String[] loginDetails = getUserInput("Enter your username, password, mail, phone number: ", 2);
                 String username = loginDetails[0];
                 String password = loginDetails[1];
 
