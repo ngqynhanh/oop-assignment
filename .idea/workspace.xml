@@ -5,98 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ceaa3be5-4832-4b58-901b-e99876a110fe" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/bin/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/bin/question0/MyList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/bin/question0/Printer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/bin/question0/Solution.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/bin/question1/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/bin/question1/MyPair.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/question0/MyList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/question0/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/question1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/question1/MyPair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-06-Nguyen-Quynh-Anh-ITCSIU24005.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-06/src/Question7/FilledColorCirclesFix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07-Nguyen-Quynh-Anh-ITCSIU24005.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/oop-lab-07.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0a/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0b/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0c/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0d/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0e/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0f/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0g/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0h/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q0i/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q1/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q2/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q3/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q4/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../oop-lab-07/src/Q5/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../oop-lab-07/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/google-java-format.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/google-java-format.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/oop-assignment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/oop-assignment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../oop-lab-02/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/Model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/Model/ProductListResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Model/ProductListResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/Operation/ProductOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Operation/ProductOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/data/orders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/data/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/App.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/All_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/All_Customer_Consumption_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Category_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Category_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../charts/Likes_Count_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Likes_Count_Figure.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../charts/Discount_Figure.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/CustomerOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/CustomerOperation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/UserOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/UserOperation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBUtil/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUtil/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../oop-lab-06/src/Question6/ConcentricCircles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oop-lab-06/src/Question6/ConcentricCircles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../oop-lab-07/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../oop-lab-07/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/UserDB.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/IOInterface/IOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/IOInterface/IOInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/CustomerListResult.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/Model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/OrderListResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/Model/OrderListResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/Model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/ProductListResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/Model/ProductListResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Operation/AdminOperation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Operation/CustomerOperation.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Operation/OrderOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/Operation/OrderOperation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Operation/ProductOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/Operation/ProductOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/data/input_product_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/data/input_product_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/data/orders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Operation/UserOperation.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/data/products.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/DBUtil/OrderDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/DBUtil/OrderDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/DBUtil/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/DBUtil/ProductDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/IOInterface/IOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/IOInterface/IOInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Model/OrderListResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Model/OrderListResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Model/ProductListResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Model/ProductListResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/DBUtil/UserDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Model/CustomerListResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/Operation/AdminOperation.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/Operation/CustomerOperation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Operation/OrderOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Operation/OrderOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/Operation/ProductOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Operation/ProductOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/Operation/UserOperation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/data/input_product_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/data/input_product_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/data/orders.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/data/products.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/data/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +66,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -165,7 +119,7 @@
       <recent name="D:\Documents\Programming\Personal\Uni\OOP\oop-assignment" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UserOperation">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="IOInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="IOInterface.IOInterface" />
       <module name="oop-assignment" />
@@ -227,8 +181,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserOperation" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.UserOperation" />
         <item itemvalue="Application.IOInterface" />
         <item itemvalue="Application.ProductOperation" />
         <item itemvalue="Application.OrderOperation" />
@@ -254,6 +208,29 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
