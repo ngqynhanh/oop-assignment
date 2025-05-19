@@ -205,7 +205,6 @@ public class IOInterface {
                     } else {
                         System.out.println("Failed to add customer " + username + ". Username may already exist or invalid input.");
                     }
-                    isEnd = true;
                 }
                 adminMenu();
             case "3":

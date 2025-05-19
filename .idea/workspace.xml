@@ -16,20 +16,6 @@
       <change beforePath="$PROJECT_DIR$/../charts/Discount_Figure.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/CustomerOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/CustomerOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/figure/All_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/figure/All_Customer_Consumption_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/figure/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/figure/Single_Customer_Consumption_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/orders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Operation/CustomerOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/CustomerOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/figure/All_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/figure/All_Customer_Consumption_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/figure/Discount_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/figure/Discount_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/figure/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/figure/Single_Customer_Consumption_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/figure/Top_10_Best-Selling_Products_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/figure/Top_10_Best-Selling_Products_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/orders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/UserDB.class" beforeDir="false" />
@@ -114,7 +100,7 @@
     "Application.UserOperation.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "nqa",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Download/jfreechart-demo-1.5.2-jar-with-dependencies.jar",
