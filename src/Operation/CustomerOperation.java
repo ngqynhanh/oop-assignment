@@ -1,18 +1,20 @@
 package Operation;
 
 import Model.Customer;
+import Model.CustomerListResult;
+
 import java.io.*;
 import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class CustomerOperation {
+public class CustomerOperation extends UserOperation {
     private static final String FILE_PATH = "data/users.json";
     private static CustomerOperation instance;
 
     private CustomerOperation() {
+        super();
     }
-
 
     public static CustomerOperation getInstance() {
         if (instance == null) {
@@ -65,7 +67,7 @@ public class CustomerOperation {
             writer.newLine();
             return true;
         } catch (IOException e) {
-            System.out.println("[CustomerOperation] Error writing to file.");
+            e.printStackTrace();
             return false;
         }
 
@@ -139,12 +141,10 @@ public class CustomerOperation {
                 return deleted;
             }
         } catch (IOException e) {
-            System.out.println("[CustomerOperation] Error deleting customer.");
+            e.printStackTrace();
         }
         return false;
     }
-
-
 
     // trả về danh sách khách hàng theo từng trang
     // mỗi trang chứa tối đa 10 khách hàng từ file user.json
@@ -185,7 +185,7 @@ public class CustomerOperation {
                 }
             }
         } catch (IOException e) {
-            System.out.println("[CustomerOperation] Error reading customer list.");
+            e.printStackTrace();
         }
 
         int totalPages = (int) Math.ceil(totalCustomers / 10.0); //tính tổng số trang cần có để hiển thị hết toàn bộ customer, Math.ceil làm tròn lên lỡ có dư thì thêm 1 trang
@@ -218,21 +218,16 @@ public class CustomerOperation {
             inputFile.delete();
             tempFile.renameTo(inputFile);
         } catch (IOException e) {
-            System.out.println("[CustomerOperation] Error deleting all customers.");
+            e.printStackTrace();
         }
     }
 
-
-    class CustomerListResult {
-        public List<Customer> customerList;
-        public int currentPage;
-        public int totalPages;
-
-        public CustomerListResult(List<Customer> customerList, int currentPage, int totalPages) {
-            this.customerList = customerList;
-            this.currentPage = currentPage;
-            this.totalPages = totalPages;
+    public String generateCustomerPhone() {
+        Random random = new Random();
+        StringBuilder phone = new StringBuilder("0");
+        for (int i = 0; i < 9; i++) {
+            phone.append(random.nextInt(10));
         }
+        return phone.toString();
     }
-
 }

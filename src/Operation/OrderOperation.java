@@ -1,6 +1,8 @@
 package Operation;
 
 import DBUtil.ProductDB;
+import DBUtil.UserDB;
+import Model.Customer;
 import Model.Product;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
@@ -8,7 +10,6 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.json.JSONObject;
 
 import DBUtil.OrderDB;
 import Model.Order;
@@ -59,21 +60,12 @@ public class OrderOperation {
     public boolean createAnOrder(String customerId, String productId, String createTime) {
         String orderId = generateUniqueOrder();
         StringBuilder order = new StringBuilder();
-
-        // create order
-        order.append("{\"order_id\":\"").append(orderId).append("\",")
-                .append("\"user_id\":\"").append(customerId).append("\",")
-                .append("\"pro_id\":\"").append(productId).append("\",")
-                .append("\"order_time\":\"").append(createTime).append("\"}");
-
-        // write order to file
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true))) {
-            bw.write(order.toString());
-            bw.newLine();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (customerId == null || productId == null || createTime == null) {
             return false;
+        }
+        else {
+            OrderDB.getInstance().saveOrders(List.of(new Order(orderId, customerId, productId, createTime)));
+            return true;
         }
     }
 
@@ -147,30 +139,63 @@ public class OrderOperation {
      * Creates 10 customers and randomly generates 50-200 orders for each.
      * Order times should be scattered across different months of the year.
      */
-// need change when the users classes are done
+
+    private String generatePassword() {
+        StringBuilder password = new StringBuilder();
+        Random random = new Random();
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+        for (int i = 0; i < 8; i++) {
+            int index = random.nextInt(characters.length());
+            password.append(characters.charAt(index));
+        }
+        return password.toString();
+    }
+
+    /**
+     * generate time order with different months of the year
+     */
+
+    private String generateTime() {
+        StringBuilder orderTime = new StringBuilder();
+        Random random = new Random();
+        int day = random.nextInt(28) + 1; // Day between 1 and 28
+        int month = random.nextInt(12) + 1; // Month between 1 and 12
+        int year = random.nextInt(3) + 2023; // Year between 2023 and 2025
+        int hour = random.nextInt(24); // Hour between 0 and 23
+        int minute = random.nextInt(60); // Minute between 0 and 59
+        int second = 2024; // Second between 0 and 59
+
+        orderTime.append(String.format("%02d-%02d-%04d_%02d:%02d:%02d", day, month, year, hour, minute, second));
+        return orderTime.toString();
+    }
+
     public void generateTestOrderData() {
         int customerCount = 10;
         int orderCount = 50 + (int) (Math.random() * 151); // Random number between 50 and 200
 
-        try (BufferedWriter orderWriter = new BufferedWriter(new FileWriter(filePath));
-            BufferedWriter customerWriter = new BufferedWriter(new FileWriter("src/data/users.json"))) {
+        try (BufferedWriter orderWriter = new BufferedWriter(new FileWriter(filePath, true));
+            BufferedWriter customerWriter = new BufferedWriter(new FileWriter("src/data/users.json", true))) {
             // generate random number of orders
+            UserOperation userOperation = UserOperation.getInstance();
             for (int i = 0; i < customerCount; i++) {
-                String customerId = "user_" + i;
-                String userName = "user_" + i;
-                String userEmail = "user_" + i + "@example.com";
-                String userPhone = "123456789" + i;
+                String customerId = userOperation.generateUserId();
+                String userName = userOperation.generateUserName();
+                String userEmail = userName + "@example.com";
+                String userPhone = CustomerOperation.getInstance().generateCustomerPhone();
+                String rawPassword = generatePassword();
+                String password = CustomerOperation.getInstance().decryptPassword(rawPassword);
+                String registerTime = generateTime();
 
                 // write customer to file
-                customerWriter.write("{\"user_id\":\"" + customerId + "\",\"user_name\":\"" + userName + "\",\"user_email\":\"" + userEmail + "\",\"user_phone\":\"" + userPhone + "\"}");
+                customerWriter.write(new Customer(customerId, userName, password, registerTime, userEmail, userPhone).toString());
                 customerWriter.newLine();
                 for (int j = 0; j < orderCount; j++) {
                     String orderId = generateUniqueOrder();
                     String productId = "p" + (int) (Math.random() * 100);
-                    String orderTime = "2023-" + ((int) (Math.random() * 12) + 1) + "-" + ((int) (Math.random() * 28) + 1) + "T" + ((int) (Math.random() * 24)) + ":" + ((int) (Math.random() * 60)) + ":00Z";
+                    String orderTime = generateTime();
 
                     // write order to file
-                    orderWriter.write("{\"order_id\":\"" + orderId + "\",\"user_id\":\"" + customerId + "\",\"pro_id\":\"" + productId + "\",\"order_time\":\"" + orderTime + "\"}");
+                    orderWriter.write(new Order(orderId, customerId, productId, orderTime).toString());
                     orderWriter.newLine();
                 }
             }
@@ -185,7 +210,6 @@ public class OrderOperation {
      * across 12 different months for the given customer.
      * @param customerId The ID of the customer
      */
-    // need change for 12 months (not only for the month the users buy products)
     public void generateSingleCustomerConsumptionFigure(String customerId) {
         List<Order> allOrders = OrderDB.getInstance().getOrders();
         List<Product> allProducts = ProductDB.getInstance().getProducts();
@@ -197,14 +221,23 @@ public class OrderOperation {
             }
         }
 
-        Map<String, Double> customerConsumption = new HashMap<>();
+        // Initialize map with 12 months (01 to 12) set to 0.0
+        Map<String, Double> customerConsumption = new LinkedHashMap<>();
+        for (int i = 1; i <= 12; i++) {
+            String month = String.format("%02d", i); // "01", "02", ..., "12"
+            customerConsumption.put(month, 0.0);
+        }
+
+        // Accumulate consumption by month
         for (Order order : customerOrders) {
             String orderTime = order.getOrderTime();
-            String month = orderTime.substring(3, 5);
+            String month = orderTime.substring(3, 5); // assumes format is "dd-MM-yyyy_..."
             String productId = order.getProId();
+
             for (Product product : allProducts) {
                 if (productId.equals(product.getProId())) {
-                    customerConsumption.put(month, customerConsumption.getOrDefault(month, 0.0) + product.getProCurrentPrice());
+                    double current = customerConsumption.getOrDefault(month, 0.0);
+                    customerConsumption.put(month, current + product.getProCurrentPrice());
                     break;
                 }
             }
@@ -229,6 +262,9 @@ public class OrderOperation {
 
         try {
             File output = new File("charts/Single_Customer_Consumption_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, chart, 1000, 600);
         } catch (IOException e) {
             e.printStackTrace();
@@ -275,6 +311,9 @@ public class OrderOperation {
 
         try {
             File output = new File("charts/All_Customer_Consumption_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, chart, 1200, 600);
         } catch (IOException e) {
             e.printStackTrace();
@@ -326,13 +365,16 @@ public class OrderOperation {
 
         try {
             File output = new File("charts/Top_10_Best-Selling_Products_Figure.png");
+            if (!output.getParentFile().exists()) {
+                output.getParentFile().mkdirs(); // create directories if they don't exist
+            }
             ChartUtils.saveChartAsPNG(output, chart, 1200, 600);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void deleteAllOrder() {
+    public void deleteAllOrders() {
         String filePath = "src/data/orders.json";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {

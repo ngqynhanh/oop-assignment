@@ -1,11 +1,10 @@
 package Model;
-
-public class User {
-    private String id;
-    private String name;
-    private String password;
-    private String registeredAt;
-    private String role;
+public abstract class User {
+    protected String id;
+    protected String name;
+    protected String password;
+    protected String registeredAt;
+    protected String role;
 
     public User(String id, String name, String password, String registeredAt, String role) {
         this.id = id;
@@ -15,9 +14,6 @@ public class User {
         this.role = role;
     }
 
-    /**
-     * Constructor with default values
-     */
     public User() {
         this("u_0000000000", "unknown", "^^$$", "01-01-2025_00:00:00", "customer");
     }

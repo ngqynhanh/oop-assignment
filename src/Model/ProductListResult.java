@@ -13,7 +13,7 @@ public class ProductListResult {
         this.totalPages = totalPages;
     }
 
-    public List<Product> getOrders() {
+    public List<Product> getProducts() {
         return products;
     }
 
