@@ -382,7 +382,8 @@ public class IOInterface {
             case "2":
                 System.out.println("================================");
                 System.out.println("Updating profile...");
-                String[] details = getUserInput("Enter your new details: ", 2);
+                System.out.println("The attributes allow to update: user_name, user_password, user_email, user_mobile)");
+                String[] details = getUserInput("Enter your new details (for example: user_email john.doe@example.com.vn): ", 2);
                 if (customerOperation.updateProfile(details[0], details[1], (Customer) user))
                     System.out.println("Profile updated successfully.");
                 else
