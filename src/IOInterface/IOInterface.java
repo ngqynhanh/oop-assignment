@@ -318,6 +318,9 @@ public class IOInterface {
                     System.out.println("Single Customer Consumption Figure: " + customerId + " generated.");
                 }
 
+                orderOperation.generateAllTop10BestSellersFigure();
+                System.out.println("Top 10 Best Sellers Figure generated.");
+
                 orderOperation.generateAllCustomersConsumptionFigure();
                 System.out.println("All Customers Consumption Figure generated.");
 
@@ -329,6 +332,7 @@ public class IOInterface {
 
                 productOperation.generateLikesCountFigure();
                 System.out.println("Likes Count Figure generated.");
+
 
                 adminMenu();
             case "7":
@@ -383,13 +387,7 @@ public class IOInterface {
             case "1":
                 System.out.println("================================");
                 System.out.println("Showing profile...");
-                printMessage("User ID: " + user.getId()
-                        + "\nUser Name: " + user.getName()
-                        + "\nUser Password: " + UserOperation.getInstance().decryptPassword(IOInterface.user.getPassword())
-                        + "\nUser Role: " + user.getRole()
-                        + "\nUser Register Time: " + user.getRegisteredAt()
-                        + "\nUser Email: " + ((Customer) user).getEmail()
-                        + "\nUser Mobile: " + ((Customer) user).getPhone());
+                printObject(IOInterface.user);
                 customerMenu();
             case "2":
                 System.out.println("================================");

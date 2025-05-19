@@ -17,21 +17,16 @@
       <change beforePath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/All_Customer_Consumption_Figure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/Category_Figure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/Discount_Figure.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/charts/Likes_Count_Figure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/Single_Customer_Consumption_Figure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/Top_10_Best-Selling_Products_Figure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/IOInterface/IOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/IOInterface/IOInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/OrderOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/OrderOperation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/ProductOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/ProductOperation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/figure/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/figure/Single_Customer_Consumption_Figure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operation/OrderOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/OrderOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operation/ProductOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/ProductOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/figure/All_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/figure/All_Customer_Consumption_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/figure/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/figure/Single_Customer_Consumption_Figure.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/orders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/UserDB.class" beforeDir="false" />

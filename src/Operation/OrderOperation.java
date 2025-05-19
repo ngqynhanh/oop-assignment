@@ -392,11 +392,4 @@ public class OrderOperation extends GUI {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        OrderOperation orderOperation = OrderOperation.getInstance();
-        orderOperation.generateSingleCustomerConsumptionFigure("u_0000000004");
-        orderOperation.generateAllCustomersConsumptionFigure();
-        orderOperation.generateAllTop10BestSellersFigure();
-    }
 }

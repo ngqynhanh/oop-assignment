@@ -282,7 +282,7 @@ public class ProductOperation extends GUI {
         renderer.setMaximumBarWidth(0.1);
 
         try {
-            File output = new File("charts/Likes_Count_Figure.png");
+            File output = new File("src/data/figure/Likes_Count_Figure.png");
             if (!output.getParentFile().exists()) {
                 output.getParentFile().mkdirs(); // create directories if they don't exist
             }
@@ -300,12 +300,5 @@ public class ProductOperation extends GUI {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        ProductOperation productOperation = new ProductOperation();
-        productOperation.generateCategoryFigure();
-        productOperation.generateDiscountFigure();
-        productOperation.generateLikesCountFigure();
     }
 }
