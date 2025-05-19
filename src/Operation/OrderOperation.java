@@ -183,7 +183,7 @@ public class OrderOperation {
                 String userEmail = userName + "@example.com";
                 String userPhone = CustomerOperation.getInstance().generateCustomerPhone();
                 String rawPassword = generatePassword();
-                String password = CustomerOperation.getInstance().decryptPassword(rawPassword);
+                String password = CustomerOperation.getInstance().encryptPassword(rawPassword);
                 String registerTime = generateTime();
 
                 // write customer to file

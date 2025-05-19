@@ -1,7 +1,9 @@
 package Operation;
 
+import DBUtil.UserDB;
 import Model.Customer;
 import Model.CustomerListResult;
+import Model.User;
 
 import java.io.*;
 import java.util.*;
@@ -55,22 +57,8 @@ public class CustomerOperation extends UserOperation {
         String encryptedPassword = userOp.encryptPassword(userPassword);
         String registerTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm:ss"));
 
-        String jsonRecord = String.format(
-                "{\"user_id\":\"%s\", \"user_name\":\"%s\", \"user_password\":\"%s\", " +
-                        "\"user_register_time\":\"%s\", \"user_role\":\"customer\", " +
-                        "\"user_email\":\"%s\", \"user_mobile\":\"%s\"}",
-                userId, userName, encryptedPassword, registerTime, userEmail, userMobile
-        );
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            writer.write(jsonRecord);
-            writer.newLine();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-
+        Customer customer = new Customer(userId, userName, encryptedPassword, registerTime, userEmail, userMobile);
+        return UserDB.getInstance().saveUser(customer);
     }
 
 

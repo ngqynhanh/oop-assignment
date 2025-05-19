@@ -1,7 +1,10 @@
 package Operation;
 
+import Model.Admin;
 import Model.Customer;
 import Model.User;
+import org.json.JSONObject;
+
 import java.util.*;
 import java.io.*;
 
@@ -18,8 +21,19 @@ public class UserOperation {
         return instance;
     }
 
-    public String generateUserId(){
+    public String generateUserId() {
         int num = new Random().nextInt(1_000_000_000);
+        // Đảm bảo là new userId không trùng với bất kỳ userId nào đã có trong file
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("\"user_id\":\"u_" + String.format("%010d", num) + "\"")) {
+                    return generateUserId(); // nếu trùng thì gọi lại hàm này
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return "u_" + String.format("%010d", num);
     }
 
@@ -50,9 +64,10 @@ public class UserOperation {
 
 
     public String decryptPassword(String encryptedPassword) {
-        if (!encryptedPassword.startsWith("^^") || !encryptedPassword.endsWith("$$")) return "";// nếu chuỗi ko có "^^" va "$$" -> ko hợp lệ -> rỗng
+        if (!encryptedPassword.startsWith("^^") || !encryptedPassword.endsWith("$$")) return "Invalid encrypted password";// nếu chuỗi ko có "^^" va "$$" -> ko hợp lệ -> rỗng
         String content = encryptedPassword.substring(2, encryptedPassword.length() - 2);//bỏ ^^ và $$
         StringBuilder originalPassword = new StringBuilder();
+        if (content.length() % 3 != 0) return "Invalid encrypted password";
 
 
         for (int i = 0; i < content.length(); i += 3) {// vòng lặp lấy lại giá trị thật
@@ -105,27 +120,24 @@ public class UserOperation {
             String line;
             while ((line = reader.readLine()) != null) { // đọc file xem da có username đó chưa
                 if (line.contains("\"user_name\":\"" + name + "\"")) {
-                    String[] tokens = line.replace("{", "").replace("}", "").split(",");// loại bỏ dấu ngoặc nhọn để chỉ lấy nội dung
-                    String id = "", encrypted = "", registeredAt = "", role = "";
-                    String email = "", phone = "";
+//                    String[] tokens = line.replace("{", "").replace("}", "").split(",");// loại bỏ dấu ngoặc nhọn để chỉ lấy nội dung
+//                    String id = "", encrypted = "", registeredAt = "", role = "";
+//                    String email = "", phone = "";
 
-                    for (String token : tokens) {
-                        token = token.trim();// dùng trim() để đảm bảo ko có khoảng trắng -> ko bị lỗi khi đọc
-                        if (token.contains("\"user_id\"")) id = token.split(":")[1].replace("\"", "").trim();// loại bỏ các dấu và lấy id gán vào id
-                        else if (token.contains("\"user_password\"")) encrypted = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_register_time\"")) registeredAt = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_role\"")) role = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_email\"")) email = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_mobile\"")) phone = token.split(":")[1].replace("\"", "").trim();
-                    }
+                    JSONObject json = new JSONObject(line);
+                    String id = json.optString("user_id", "");
+                    String encrypted = json.optString("user_password", "");
+                    String registeredAt = json.optString("user_register_time", "");
+                    String role = json.optString("user_role", "");
+                    String email = json.optString("user_email", "");
+                    String phone = json.optString("user_mobile", "");
 
                     if (decryptPassword(encrypted).equals(password)) {
                         if (role.equalsIgnoreCase("customer")) {
-                            return new Customer(id, name, encrypted, registeredAt, email, phone);// tạo đối tượng customer nếu l role cus
-                        }else if (role.equalsIgnoreCase("admin")) {
-                            return new User(id, name, encrypted,registeredAt, role) {};// tạo đối tượng admin
+                            return new Customer(id, name, encrypted, registeredAt, email, phone);
+                        } else if (role.equalsIgnoreCase("admin")) {
+                            return new Admin(id, name, encrypted, registeredAt);
                         }
-
                     }
                 }
             }
@@ -148,7 +160,21 @@ public class UserOperation {
         else
             return generateUserName();
     }
+
+    public static void main(String[] args) {
+        //test encrypt password
+        UserOperation userOperation = UserOperation.getInstance();
+        String password = "xinchao";
+        String encryptedPassword = userOperation.encryptPassword(password);
+        System.out.println("Original Password: " + password);
+        System.out.println("Encrypted Password: " + encryptedPassword);
+        //check decrypt password with the one in file
+        encryptedPassword = "^^aFxGsifqnEGc3Qh8Ca0No1EtRuuD4iyUlhxaNgat0dmjmMjiBtn$$";
+        String decryptedPassword = userOperation.decryptPassword(encryptedPassword);
+        System.out.println("xinchaominhlaadmin");
+        System.out.println("Decrypted Password: " + decryptedPassword);
     }
+}
 
 
 

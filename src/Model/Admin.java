@@ -1,4 +1,4 @@
-
+package Model;
 public class Admin extends User {
 
     public Admin(String id, String name, String password, String registeredAt) {

@@ -77,6 +77,10 @@ public class IOInterface {
                 String password = loginDetails[1];
 
                 User user = userOperation.login(username, password);
+                if (user == null) {
+                    System.out.println("Login failed. Please check your credentials.");
+                    mainMenu();
+                }
                 if (user.getRole().equals("admin")) {
                     System.out.println("Login successful. Welcome, " + username + "!");
                     adminMenu();
@@ -90,7 +94,7 @@ public class IOInterface {
             case "2":
                 System.out.println("================================");
                 System.out.println("Register");
-                String[] registerDetails = getUserInput("Enter your username and password: ", 4);
+                String[] registerDetails = getUserInput("Enter your username, password, email, and phone number: ", 4);
                 String regUsername = registerDetails[0];
                 String regPassword = registerDetails[1];
                 String regEmail = registerDetails[2];
@@ -165,7 +169,7 @@ public class IOInterface {
                             System.out.println("Already on the first page.");
                         }
                     } else if (choice.equals("b")) {
-                        mainMenu();
+                        adminMenu();
                     } else {
                         System.out.println("Invalid choice. Please try again.");
                     }
@@ -176,11 +180,7 @@ public class IOInterface {
 
                 boolean isEnd = false;
                 while (!isEnd) {
-                    String[] details = getUserInput("Enter customer details (username, password, email, phone) or 'end' to finish: ", 4);
-                    if (details[0].equalsIgnoreCase("end")) {
-                        isEnd = true;
-                        break;
-                    }
+                    String[] details = getUserInput("Enter customer details (username, password, email, phone): ", 4);
                     String username = details[0];
                     String password = details[1];
                     String email = details[2];
@@ -191,6 +191,7 @@ public class IOInterface {
                     } else {
                         System.out.println("Failed to add customer " + username + ". Username may already exist or invalid input.");
                     }
+                    isEnd = true;
                 }
                 mainMenu();
             case "3":
@@ -220,7 +221,7 @@ public class IOInterface {
                             System.out.println("Already on the first page.");
                         }
                     } else if (choice.equals("b")) {
-                        mainMenu();
+                        adminMenu();
                     } else {
                         System.out.println("Invalid choice. Please try again.");
                     }
