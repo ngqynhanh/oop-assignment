@@ -98,9 +98,9 @@ public class IOInterface {
 
                 if (customerOperation.registerCustomer(regUsername, regPassword, regEmail, regPhone)) {
                     System.out.println("Registration successful. Welcome, " + regUsername + "!");
-                    for (User user : UserDB.getInstance().getUsers()) {
-                        if (user.getId().equals(regUsername) && user instanceof Customer) {
-                            IOInterface.user = new Customer(user.getId(), user.getName(), user.getPassword(), user.getRegisteredAt(), ((Customer) user).getEmail(), ((Customer) user).getPhone());
+                    for (User u : UserDB.getInstance().getUsers()) {
+                        if (u.getName().equals(regUsername) && u instanceof Customer) {
+                            IOInterface.user = u;
                             break;
                         }
                     }
