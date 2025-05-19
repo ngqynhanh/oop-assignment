@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class CustomerOperation extends UserOperation {
-    private static final String FILE_PATH = "data/users.json";
+    private static final String FILE_PATH = "src/data/users.json";
     private static CustomerOperation instance;
 
     private CustomerOperation() {
