@@ -213,11 +213,12 @@ public class IOInterface {
                 System.out.println("Showing customers...");
                 int currentPageCustomers = 1;
                 while (true) {
-                    ProductListResult result = ProductOperation.getInstance().getProductList(currentPageCustomers);
-                    List<Product> products = result.getProducts();
-                    int totalPages = result.getTotalPages();
+                    List<User> users = UserDB.getInstance().getUsers();
+                    int totalPages = (int) Math.ceil((double) users.size() / 10);
+                    int startIndex = (currentPageCustomers - 1) * 10;
+                    int endIndex = Math.min(startIndex + 10, users.size());
 
-                    IOInterface.getInstance().showList("admin", "Customer", products, currentPageCustomers, totalPages);
+                    showList("admin", "Customer", users.subList(startIndex, endIndex), currentPageCustomers, totalPages);
 
                     System.out.println();
                     choice = getUserInput("Enter 'n' for next page, 'p' for previous page, or 'b' to go back\nEnter your choice: ", 1)[0];

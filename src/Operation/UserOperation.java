@@ -144,7 +144,7 @@ public class UserOperation {
         else
             return generateUserName();
     }
-    }
+}
 
 
 
