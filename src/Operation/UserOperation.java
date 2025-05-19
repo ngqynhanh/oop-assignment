@@ -2,6 +2,8 @@ package Operation;
 
 import Model.Customer;
 import Model.User;
+import org.json.JSONObject;
+
 import java.util.*;
 import java.io.*;
 
@@ -105,19 +107,13 @@ public class UserOperation {
             String line;
             while ((line = reader.readLine()) != null) { // đọc file xem da có username đó chưa
                 if (line.contains("\"user_name\":\"" + name + "\"")) {
-                    String[] tokens = line.replace("{", "").replace("}", "").split(",");// loại bỏ dấu ngoặc nhọn để chỉ lấy nội dung
-                    String id = "", encrypted = "", registeredAt = "", role = "";
-                    String email = "", phone = "";
-
-                    for (String token : tokens) {
-                        token = token.trim();// dùng trim() để đảm bảo ko có khoảng trắng -> ko bị lỗi khi đọc
-                        if (token.contains("\"user_id\"")) id = token.split(":")[1].replace("\"", "").trim();// loại bỏ các dấu và lấy id gán vào id
-                        else if (token.contains("\"user_password\"")) encrypted = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_register_time\"")) registeredAt = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_role\"")) role = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_email\"")) email = token.split(":")[1].replace("\"", "").trim();
-                        else if (token.contains("\"user_mobile\"")) phone = token.split(":")[1].replace("\"", "").trim();
-                    }
+                    JSONObject json = new JSONObject(line);
+                    String id = json.optString("user_id", "");
+                    String encrypted = json.optString("user_password", "");
+                    String registeredAt = json.optString("user_register_time", "");
+                    String role = json.optString("user_role", "");
+                    String email = json.optString("user_email", "");
+                    String phone = json.optString("user_mobile", "");
 
                     if (decryptPassword(encrypted).equals(password)) {
                         if (role.equalsIgnoreCase("customer")) {
