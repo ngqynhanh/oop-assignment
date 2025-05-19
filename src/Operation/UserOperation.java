@@ -1,7 +1,11 @@
 package Operation;
 
+<<<<<<< Updated upstream
 import Model.Admin;
 import Model.Customer;
+=======
+import DBUtil.UserDB;
+>>>>>>> Stashed changes
 import Model.User;
 import org.json.JSONObject;
 
@@ -31,6 +35,7 @@ public class UserOperation {
                     return generateUserId(); // nếu trùng thì gọi lại hàm này
                 }
             }
+<<<<<<< Updated upstream
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -177,5 +182,24 @@ public class UserOperation {
 }
 
 
+=======
+            if (UserOperation.getInstance().validateUsername(randomString.toString()) &&
+                    !UserOperation.getInstance().checkUsernameExist(randomString.toString()))
+                return randomString.toString();
+            else
+                return generateUserName();
+     }
+
+     public boolean checkUserIdExist(String userId) {
+         for (User user : UserDB.getInstance().getUsers()) {
+             if (user.getId().equals(userId)) {
+                 return true;
+             }
+         }
+         return false;
+     }
+
+ }
+>>>>>>> Stashed changes
 
 

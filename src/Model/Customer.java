@@ -22,6 +22,7 @@ public class Customer extends User {
     @Override
     public String toString() {
         return "{" +
+<<<<<<< Updated upstream
                 "\"user_id\": \"" + id + "\"," +
                 "\"user_name\": \"" + name + "\"," +
                 "\"user_password\": \"" + password + "\"," +
@@ -29,6 +30,15 @@ public class Customer extends User {
                 "\"user_role\": \"" + role + "\"," +
                 "\"user_email\": \"" + email + "\"," +
                 "\"user_mobile\": \"" + phone + "\"" +
+=======
+                "  \"user_id\": \"" + getId() + "\"," +
+                "  \"user_name\": \"" + getName() + "\"," +
+                "  \"user_password\": \"" + getPassword() + "\"," +
+                "  \"user_register_time\": \"" + getRegisteredAt() + "\"," +
+                "  \"user_role\": \"" + getRole() + "\"," +
+                "  \"user_email\": \"" + email + "\"," +
+                "  \"user_mobile\": \"" + phone + "\"" +
+>>>>>>> Stashed changes
                 "}";
     }
 

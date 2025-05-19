@@ -218,4 +218,18 @@ public class CustomerOperation extends UserOperation {
         }
         return phone.toString();
     }
+<<<<<<< Updated upstream
+=======
+
+    public Customer addCustomer(String userName, String userPassword, String userEmail) {
+        String userId = generateUserId();
+        String encryptedPassword = encryptPassword(userPassword);
+        String registerTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm:ss"));
+        String userMobile = generateCustomerPhone();
+
+        Customer customer = new Customer(userId, userName, encryptedPassword, registerTime, userEmail, userMobile);
+        registerCustomer(userName, userPassword, userEmail, userMobile);
+        return customer;
+    }
+>>>>>>> Stashed changes
 }

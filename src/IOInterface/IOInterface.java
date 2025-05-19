@@ -2,23 +2,40 @@ package IOInterface;
 
 import DBUtil.OrderDB;
 import DBUtil.UserDB;
+<<<<<<< Updated upstream
 import Model.Customer;
 import Model.Product;
 import Model.ProductListResult;
 import Model.User;
 import Operation.*;
+=======
+import Model.Product;
+import Model.ProductListResult;
+import Model.User;
+import Operation.AdminOperation;
+import Operation.CustomerOperation;
+import Operation.OrderOperation;
+import Operation.ProductOperation;
+
+import java.io.File;
+import java.util.Arrays;
+>>>>>>> Stashed changes
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class IOInterface {
 
     private static IOInterface instance = null;
     private Scanner scanner = new Scanner(System.in);
+<<<<<<< Updated upstream
     private static String userID = null;
     ProductOperation productOperation = ProductOperation.getInstance();
     OrderOperation orderOperation = OrderOperation.getInstance();
     CustomerOperation customerOperation = CustomerOperation.getInstance();
     UserOperation userOperation = UserOperation.getInstance();
+=======
+>>>>>>> Stashed changes
 
     private IOInterface() {
     }
@@ -138,6 +155,12 @@ public class IOInterface {
         System.out.println("8. Logout");
 
         String choice = getUserInput("Please select an option: ", 1)[0];
+<<<<<<< Updated upstream
+=======
+        ProductOperation productOperation = ProductOperation.getInstance();
+        OrderOperation orderOperation = OrderOperation.getInstance();
+        CustomerOperation customerOperation = CustomerOperation.getInstance();
+>>>>>>> Stashed changes
 
         switch (choice) {
             case "1":
@@ -145,6 +168,7 @@ public class IOInterface {
                 System.out.println("Showing products...");
 
                 int currentPage = 1;
+<<<<<<< Updated upstream
 
                 while (true) {
                     ProductListResult result = ProductOperation.getInstance().getProductList(currentPage);
@@ -152,12 +176,28 @@ public class IOInterface {
                     int totalPages = result.getTotalPages();
 
                     IOInterface.getInstance().showList("admin", "Product", products, currentPage, totalPages);
+=======
+                ProductListResult productListResult;
+
+                while (true) {
+                    productListResult = productOperation.getProductList(currentPage);
+                    List<Product> products = productListResult.getProducts();
+
+                    System.out.println("===== Product List (Page " + currentPage + "/" + productListResult.getTotalPages() + ") =====");
+                    for (int i = 0; i < products.size(); i++) {
+                        System.out.println((i + 1) + ". " + products.get(i));
+                    }
+>>>>>>> Stashed changes
 
                     System.out.println();
                     choice = getUserInput("Enter 'n' for next page, 'p' for previous page, or 'b' to go back\nEnter your choice: ", 1)[0];
 
                     if (choice.equals("n")) {
+<<<<<<< Updated upstream
                         if (currentPage < totalPages) {
+=======
+                        if (currentPage < productListResult.getTotalPages()) {
+>>>>>>> Stashed changes
                             currentPage++;
                         } else {
                             System.out.println("Already on the last page.");
@@ -169,7 +209,11 @@ public class IOInterface {
                             System.out.println("Already on the first page.");
                         }
                     } else if (choice.equals("b")) {
+<<<<<<< Updated upstream
                         adminMenu();
+=======
+                        break;
+>>>>>>> Stashed changes
                     } else {
                         System.out.println("Invalid choice. Please try again.");
                     }
@@ -177,6 +221,7 @@ public class IOInterface {
             case "2":
                 System.out.println("================================");
                 System.out.println("Adding customers...");
+<<<<<<< Updated upstream
 
                 boolean isEnd = false;
                 while (!isEnd) {
@@ -194,6 +239,19 @@ public class IOInterface {
                     isEnd = true;
                 }
                 mainMenu();
+=======
+                String[] details = getUserInput("Enter list of Customers", 1);
+
+                String outputPath = "data/temp_customers.json";
+                File output = new File(outputPath);
+                if (!output.getParentFile().exists()) {
+                    output.getParentFile().mkdirs(); // create directories if they don't exist
+                }
+                List<User> list = UserDB.getInstance().loadUsers(outputPath);
+                UserDB.getInstance().saveUsers(list);
+                System.out.println("Customers added successfully.");
+                break;
+>>>>>>> Stashed changes
             case "3":
                 System.out.println("================================");
                 System.out.println("Showing customers...");
@@ -265,7 +323,11 @@ public class IOInterface {
                 for(int i = 0; i < OrderDB.getInstance().getOrders().size(); i++) {
                     System.out.println(i + 1 + ". " + OrderDB.getInstance().getOrders().get(i));
                 }
+<<<<<<< Updated upstream
                 mainMenu();
+=======
+                break;
+>>>>>>> Stashed changes
             case "6":
                 System.out.println("================================");
                 System.out.println("Generating all statistical figures...");
@@ -278,7 +340,11 @@ public class IOInterface {
                 productOperation.generateDiscountFigure();
                 productOperation.generateCategoryFigure();
                 productOperation.generateCategoryFigure();
+<<<<<<< Updated upstream
                 mainMenu();
+=======
+                break;
+>>>>>>> Stashed changes
             case "7":
                 System.out.println("================================");
                 System.out.println("Deleting all data...");
@@ -292,7 +358,11 @@ public class IOInterface {
                 } else {
                     System.out.println("Data deletion canceled.");
                 }
+<<<<<<< Updated upstream
                 mainMenu();
+=======
+                break;
+>>>>>>> Stashed changes
             case "8":
                 System.out.println("================================");
                 System.out.println("Logging out...");
@@ -326,6 +396,7 @@ public class IOInterface {
         ProductOperation productOperation = ProductOperation.getInstance();
         OrderOperation orderOperation = OrderOperation.getInstance();
         CustomerOperation customerOperation = CustomerOperation.getInstance();
+<<<<<<< Updated upstream
         Customer customer = null;
         for (User user : UserDB.getInstance().getUsers()) {
             if (user.getId().equals(userID) && user instanceof Customer) {
@@ -372,6 +443,8 @@ public class IOInterface {
                 System.out.println("Invalid option. Please try again.");
                 mainMenu();
         }
+=======
+>>>>>>> Stashed changes
 
 
     }
@@ -385,6 +458,7 @@ public class IOInterface {
      * @param pageNumber The current page number
      * @param totalPages The total number of pages
      */
+<<<<<<< Updated upstream
     // Simpler: one-page-only view
     public <T> void showList(String userRole, String listType, List<T> objectList, int pageNumber, int totalPages) {
         System.out.println("===== " + listType + " List =====");
@@ -411,5 +485,47 @@ public class IOInterface {
 
     public void printObject(Object targetObject) {
         System.out.println(targetObject.toString());
+=======
+    public <T> void showList(String listType, Function<Integer, List<T>> pageFetcher, int totalPages) {
+        Scanner scanner = new Scanner(System.in);
+        int currentPage = 1;
+
+        while (true) {
+            List<T> items = pageFetcher.apply(currentPage);
+            System.out.println("===== " + listType + " List (Page " + currentPage + " of " + totalPages + ") =====");
+
+            for (int i = 0; i < items.size(); i++) {
+                System.out.println((i + 1) + ". " + items.get(i));
+            }
+
+            System.out.println("====================================");
+            System.out.print("Enter 'n' for next, 'p' for previous, 'b' to go back: ");
+            String choice = scanner.nextLine().trim();
+
+            if (choice.equalsIgnoreCase("n")) {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                } else {
+                    System.out.println("Already on the last page.");
+                }
+            } else if (choice.equalsIgnoreCase("p")) {
+                if (currentPage > 1) {
+                    currentPage--;
+                } else {
+                    System.out.println("Already on the first page.");
+                }
+            } else if (choice.equalsIgnoreCase("b")) {
+                break;
+            } else {
+                System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        IOInterface ioInterface = IOInterface.getInstance();
+        ioInterface.adminMenu();
+>>>>>>> Stashed changes
     }
 }

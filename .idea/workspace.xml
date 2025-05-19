@@ -17,11 +17,14 @@
       <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/question0/Solution.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/question1/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../New folder (2)/oop-lab-08/src/question1/MyPair.java" afterDir="false" />
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/../charts/All_Customer_Consumption_Figure.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../charts/Category_Figure.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../charts/Likes_Count_Figure.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" afterDir="false" />
+=======
+>>>>>>> Stashed changes
       <change afterPath="$PROJECT_DIR$/../oop-lab-06-Nguyen-Quynh-Anh-ITCSIU24005.zip" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../oop-lab-06/src/Question6/ConcentricCircles.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../oop-lab-06/src/Question7/FilledColorCirclesFix.java" afterDir="false" />
@@ -54,6 +57,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/DBUtil/UserDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/DBUtil/UserDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/IOInterface/IOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/IOInterface/IOInterface.class" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Model/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Model/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Model/User.class" afterDir="false" />
@@ -61,6 +65,13 @@
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/UserOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/UserOperation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/orders.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/OrderOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/OrderOperation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/Operation/ProductOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/Operation/ProductOperation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBUtil/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUtil/ProductDB.java" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/DBUtil/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUtil/UserDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Admin.java" afterDir="false" />
@@ -68,7 +79,6 @@
       <change beforePath="$PROJECT_DIR$/src/Operation/CustomerOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/CustomerOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operation/OrderOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/OrderOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operation/UserOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/UserOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/orders.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/Model/ProductListResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/Model/ProductListResult.class" afterDir="false" />
@@ -132,7 +142,10 @@
   "keyToString": {
     "Application.CustomerOperation.executor": "Run",
     "Application.IOInterface.executor": "Run",
+<<<<<<< Updated upstream
     "Application.Main.executor": "Run",
+=======
+>>>>>>> Stashed changes
     "Application.OrderDB.executor": "Run",
     "Application.OrderOperation.executor": "Run",
     "Application.ProductDB.executor": "Run",
@@ -155,12 +168,34 @@
       <recent name="D:\Documents\Programming\Personal\Uni\OOP\oop-assignment" />
     </key>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Application.Main">
     <configuration name="IOInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="IOInterface.IOInterface" />
       <module name="oop-assignment" />
       <extension name="coverage">
         <pattern>
+=======
+  <component name="RunManager" selected="Application.IOInterface">
+    <configuration name="CustomerOperation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Operation.CustomerOperation" />
+      <module name="oop-assignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Operation.ProductOperation" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IOInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IOInterface.IOInterface" />
+      <module name="oop-assignment" />
+      <extension name="coverage">
+        <pattern>
+>>>>>>> Stashed changes
           <option name="PATTERN" value="IOInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
@@ -207,7 +242,7 @@
       <module name="oop-assignment" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Operation.*" />
+          <option name="PATTERN" value="Operation.ProductOperation" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -217,11 +252,19 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.UserOperation" />
         <item itemvalue="Application.IOInterface" />
         <item itemvalue="Application.ProductOperation" />
         <item itemvalue="Application.OrderOperation" />
+=======
+        <item itemvalue="Application.IOInterface" />
+        <item itemvalue="Application.ProductOperation" />
+        <item itemvalue="Application.OrderOperation" />
+        <item itemvalue="Application.CustomerOperation" />
+        <item itemvalue="Application.UserOperation" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>

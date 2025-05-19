@@ -8,6 +8,7 @@
 {"user_id":"u_0000000008","user_name":"james_johnson","user_password":"^^tU7vW8xY9zA0b$$","user_register_time":"22-03-2024_12:40:29","user_role":"customer","user_email":"james.johnson@example.com","user_mobile":"0478901234"}
 {"user_id":"u_0000000009","user_name":"olivia_martin","user_password":"^^cD1eF2gH3iJ4k$$","user_register_time":"05-04-2024_08:25:14","user_role":"customer","user_email":"olivia.martin@example.com","user_mobile":"0489012345"}
 {"user_id":"u_0000000010","user_name":"mark_anderson","user_password":"^^lM5nO6pQ7rS8t$$","user_register_time":"15-04-2024_17:10:36","user_role":"customer","user_email":"mark.anderson@example.com","user_mobile":"0490123456"}
+<<<<<<< Updated upstream
 {"user_id":"u_0000000011","user_name":"manager","user_password":"^^uV9wX0yZ1aB2c$$","user_register_time":"01-01-2024_10:00:00","user_role":"admin"}{  "user_id": "u_0629517772",  "user_name": "iMLduig",  "user_password": "Invalid encrypted password",  "user_register_time": "12-09-2023_22:31:2024",  "user_role": "customer",  "user_email": "iMLduig@example.com",  "user_mobile": "0297978296"}
 {  "user_id": "u_0321944256",  "user_name": "xbGqoB",  "user_password": "Invalid encrypted password",  "user_register_time": "05-02-2023_13:36:2024",  "user_role": "customer",  "user_email": "xbGqoB@example.com",  "user_mobile": "0713570994"}
 {  "user_id": "u_0483427532",  "user_name": "zCpvhx",  "user_password": "Invalid encrypted password",  "user_register_time": "16-06-2024_21:33:2024",  "user_role": "customer",  "user_email": "zCpvhx@example.com",  "user_mobile": "0944244354"}
@@ -19,3 +20,6 @@
 {  "user_id": "u_0581960397",  "user_name": "fvktzq",  "user_password": "Invalid encrypted password",  "user_register_time": "06-12-2023_15:19:2024",  "user_role": "customer",  "user_email": "fvktzq@example.com",  "user_mobile": "0237981675"}
 {  "user_id": "u_0697845206",  "user_name": "YRohgwB",  "user_password": "Invalid encrypted password",  "user_register_time": "20-10-2024_15:15:2024",  "user_role": "customer",  "user_email": "YRohgwB@example.com",  "user_mobile": "0405538216"}
 {  "user_id": "u_0266878439",  "user_name": "xinchao",  "user_password": "^^jopEjaHBsUZseFsZh1I22Yi3$$",  "user_register_time": "19-05-2025_13:10:42",  "user_role": "customer",  "user_email": "xinchao@gmail.com",  "user_mobile": "0344444444"}
+=======
+{"user_id":"u_0000000011","user_name":"manager","user_password":"^^uV9wX0yZ1aB2c$$","user_register_time":"01-01-2024_10:00:00","user_role":"admin"}
+>>>>>>> Stashed changes
