@@ -90,7 +90,7 @@ public class IOInterface {
             case "2":
                 System.out.println("================================");
                 System.out.println("Register");
-                String[] registerDetails = getUserInput("Enter your username, password, email, and mobile number: ", 4);
+                String[] registerDetails = getUserInput("Enter your username, password: ", 4);
                 String regUsername = registerDetails[0];
                 String regPassword = registerDetails[1];
                 String regEmail = registerDetails[2];
@@ -245,12 +245,13 @@ public class IOInterface {
                 System.out.println("================================");
                 System.out.println("Showing orders...");
                 int currentPageOrders = 1;
-                while(true) {
-                    ProductListResult result = ProductOperation.getInstance().getProductList(currentPageOrders);
-                    List<Product> products = result.getProducts();
-                    int totalPages = result.getTotalPages();
+                String customerId = getUserInput("Enter customer ID (or leave blank for all): ", 1)[0];
 
-                    IOInterface.getInstance().showList("admin", "Order", products, currentPageOrders, totalPages);
+                while(true) {
+                    OrderListResult result = OrderOperation.getInstance().getOrderList(customerId, currentPageOrders);
+                    List<Order> orders = result.getOrders();
+                    int totalPages = result.getTotalPages();
+                    showList("admin", "Order", orders, currentPageOrders, totalPages);
 
                     System.out.println();
                     choice = getUserInput("Enter 'n' for next page, 'p' for previous page, or 'b' to go back\nEnter your choice: ", 1)[0];
@@ -284,7 +285,7 @@ public class IOInterface {
             case "6":
                 System.out.println("================================");
                 System.out.println("Generating all statistical figures...");
-                String customerId = getUserInput("Enter customer ID (or leave blank for all): ", 1)[0];
+                customerId = getUserInput("Enter customer ID (or leave blank for all): ", 1)[0];
 
                 //open files in windows app
 //                if (!customerId.isEmpty()) {

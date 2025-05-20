@@ -16,6 +16,13 @@
       <change beforePath="$PROJECT_DIR$/../charts/Discount_Figure.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Single_Customer_Consumption_Figure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/../charts/Top_10_Best-Selling_Products_Figure.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/IOInterface/IOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/IOInterface/IOInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oop-assignment/data/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IOInterface/IOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/figure/Single_Customer_Consumption_Figure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/figure/Single_Customer_Consumption_Figure.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/orders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/OrderDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/ProductDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/oop-assignment/DBUtil/UserDB.class" beforeDir="false" />
@@ -88,28 +95,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CustomerOperation.executor": "Run",
-    "Application.IOInterface.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.OrderDB.executor": "Run",
-    "Application.OrderOperation.executor": "Run",
-    "Application.ProductDB.executor": "Run",
-    "Application.ProductOperation.executor": "Run",
-    "Application.UserOperation.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "nqa",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Download/jfreechart-demo-1.5.2-jar-with-dependencies.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CustomerOperation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IOInterface.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderDB.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderOperation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductDB.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductOperation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserOperation.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;nqa&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Download/jfreechart-demo-1.5.2-jar-with-dependencies.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Programming\Personal\Uni\OOP\oop-assignment" />
